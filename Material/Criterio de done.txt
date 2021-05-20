@@ -4,7 +4,7 @@ Criteiro De Done:
 + Que todas las funcionalidades hayan sido testeadas y/o revisadas por un compañero.
 + Comentar arriba de cada funcion su funcionalidad.
 + Que se haya documentado el progreso del proyecto en Jira.
-+ Que al final de cada Sprint las User Stories esten implementadas .
+
 
 
 
