@@ -8,7 +8,7 @@
 -- Versión de PHP: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -26,12 +26,7 @@ SET time_zone = "+00:00";
 
 --
 -- Estructura de tabla para la tabla `materiales`
---
---descomentar para autoinstalar
---CREATE DATABASE IF NOT EXISTS `db_metodologias` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
---USE `db_metodologias`;
---CREATE TABLE IF NOT EXISTS `materiales`(
-  
+-- 
 CREATE TABLE `materiales` (
   `id_materiales` int(11) NOT NULL,
   `nombre` varchar(20) NOT NULL,
@@ -44,7 +39,6 @@ CREATE TABLE `materiales` (
 --
 -- Estructura de tabla para la tabla `pedido`
 --
---CREATE TABLE IF NOT EXISTS `pedido` (
 CREATE TABLE `pedido` (
   `id_pedido` int(11) NOT NULL,
   `ubicacion` varchar(30) NOT NULL,
@@ -58,7 +52,6 @@ CREATE TABLE `pedido` (
 --
 -- Estructura de tabla para la tabla `usuario`
 --
---CREATE TABLE IF NOT EXISTS `usuario` (
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `usuario` varchar(20) NOT NULL,
