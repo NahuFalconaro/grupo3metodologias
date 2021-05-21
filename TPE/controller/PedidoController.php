@@ -20,10 +20,6 @@ class PedidoController
     //$params = lo que te tre el router despues de la "/"
     //$params = null
 
-    function index(){
-        $this->view->ShowHome();
-    }
-
     function agregarPedido(){
 
         
