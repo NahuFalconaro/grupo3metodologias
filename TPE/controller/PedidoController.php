@@ -14,11 +14,15 @@ class PedidoController
     function __construct()
     {
         $pedidoModel = new PedidoModel();
-        $view = new View();
+        $this->view = new View();
     }
 
     //$params = lo que te tre el router despues de la "/"
     //$params = null
+
+    function index(){
+        $this->view->ShowHome();
+    }
 
     function agregarPedido(){
 

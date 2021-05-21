@@ -12,6 +12,7 @@ class View
     function ShowHome()
     {
         $smarty = new Smarty();
+        $smarty->assign('Titulo', 'Grupo 3 Metodologias');
         $smarty->display('templates/recent.tpl');
     }
 }

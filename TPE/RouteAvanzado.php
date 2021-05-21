@@ -43,7 +43,7 @@ $r->addRoute("pedidos", "GET", "PedidoController", "formPedido");
 
 
 //Ruta por defecto.
-$r->setDefaultRoute("GalleryController", "Home");
+$r->setDefaultRoute("pedidoController", "Home"); //tendria que haber un indexController
 
 //run
 $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']);
