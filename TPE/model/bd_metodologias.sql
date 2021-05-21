@@ -41,10 +41,13 @@ CREATE TABLE `materiales` (
 --
 CREATE TABLE `pedido` (
   `id_pedido` int(11) NOT NULL,
+  `nombre`varchar(20) NOT NULL,
+  `apellido` varchar (20) NOT NULL,
   `ubicacion` varchar(30) NOT NULL,
   `telefono` int(11) NOT NULL,
   `foto` varchar(100) DEFAULT NULL,
-  `clase_vehiculo` char(1) NOT NULL
+  `clase_vehiculo` char(1) NOT NULL,
+  `franja_horaria` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

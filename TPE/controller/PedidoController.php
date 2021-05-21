@@ -14,7 +14,7 @@ class PedidoController
     function __construct()
     {
         $pedidoModel = new PedidoModel();
-        $view = new View();
+        $this->view = new View();
     }
 
     //$params = lo que te tre el router despues de la "/"
@@ -27,6 +27,10 @@ class PedidoController
 
     function formPedido(){
         $this->view->showHome();
+    }
+
+    function home(){
+        $this->view->Form();
     }
 
 }
