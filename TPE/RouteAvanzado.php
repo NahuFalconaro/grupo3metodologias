@@ -21,7 +21,7 @@ $r->addRoute("pedidos", "GET", "PedidoController", "formPedido");
 //Rutas de ejemplo 
 
 
-// $r->addRoute("home", "GET", "GalleryController", "Home");
+ $r->addRoute("formpedido", "GET", "PedidoController", "Home");
 // $r->addRoute("about", "GET", "GalleryController", "About");
 // $r->addRoute("contact", "GET", "GalleryController", "Contact");
 

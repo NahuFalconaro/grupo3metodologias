@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-05-21 21:17:07
+/* Smarty version 3.1.34-dev-7, created on 2021-05-21 23:57:13
   from 'C:\xampp1\htdocs\grupo3metodologias\TPE\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60a80733ce9972_71634258',
+  'unifunc' => 'content_60a82cb973f291_46166034',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a5d11eb75b7a27e7209c29f8ae879ac6ef5f13ca' => 
     array (
       0 => 'C:\\xampp1\\htdocs\\grupo3metodologias\\TPE\\templates\\index.tpl',
-      1 => 1621624624,
+      1 => 1621634221,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,31 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60a80733ce9972_71634258 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60a82cb973f291_46166034 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"><?php echo '</script'; ?>
+>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/formulario.css">
     <title>Document</title>
 </head>
+
 <body>
+    <div class="row">
     <header>
-       <div class='header__top'>
-           <h1>Servicio Metodologia Grupo 3</h1>
-           <a href="#">Iniciar Sesion</a>
-       </div> 
-       <div class='header__bot'>
+        <div class='header__top'>
+            <h1>Servicio Metodologia Grupo 3</h1>
+            <a href="#">Iniciar Sesion</a>
+        </div>
+        <div class='header__bot'>
             <ul>
                 <li><a href='#'>Servicio</a></li>
                 <li><a href='#'>Cartelera</a></li>
@@ -44,7 +52,7 @@ function content_60a80733ce9972_71634258 (Smarty_Internal_Template $_smarty_tpl)
                 <li><a href='#'>Contactanos</a></li>
                 <li><a href='#'>Voluntarios</a></li>
             </ul>
-       </div>
+        </div>
     </header>
     <div class="banner">
         <div class="banner__text">
@@ -52,8 +60,21 @@ function content_60a80733ce9972_71634258 (Smarty_Internal_Template $_smarty_tpl)
             <p>Trabaja con Nosotros</p>
         </div>
     </div>
-
-    
+    </div>
+    <div class="main-content">
+        <div class="row">
+        </div>
+    </div>
+    <?php echo '<script'; ?>
+ src="js/index.js"><?php echo '</script'; ?>
+>
+   <?php echo '<script'; ?>
+ src="js/jquery-3.2.1.min.js"><?php echo '</script'; ?>
+>
+   <!-- <?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
+>-->
 </body>
+
 </html><?php }
 }

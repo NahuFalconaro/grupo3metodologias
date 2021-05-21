@@ -29,4 +29,8 @@ class PedidoController
         $this->view->showHome();
     }
 
+    function home(){
+        $this->view->Form();
+    }
+
 }
