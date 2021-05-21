@@ -41,12 +41,12 @@
                         </div>
                         <div class="row justify-content-start ">
                             <div class="col-5">
-                                <select name="vehiculo" id="vehiculo-requerido" class="form-select">
-                                    <option selected value="{$pedido['clase_vehiculo'] == a}"> Carrito </option>
+                                <select name="vehiculo" value="{$pedido['clase_vehiculo']}" id="vehiculo-requerido" class="form-select">
+                                    <option value="a"> Carrito </option>
                                     <!--creo que es asi el value-->
-                                    <option selected value="b"> Auto </option>
-                                    <option selected value="c"> Camioneta </option>
-                                    <option selected value="d"> Camion </option>
+                                    <option value="b"> Auto </option>
+                                    <option value="c"> Camioneta </option>
+                                    <option value="d"> Camion </option>
                                 </select>
                             </div>
                             <div class="col-5">
@@ -55,8 +55,8 @@
                             </div>
                         </div>
                         <div class="row justify-content-start ">
-                            <div class="col-6">
-                                <input type="image" class="form-control" value="{$pedido['foto']}" placeholder="Imagen"
+                            <div class="col-10">
+                                <input type="file" class="form-control" value="{$pedido['foto']}" placeholder="Imagen"
                                     aria-label="Imagen">
                             </div>
                         </div>
@@ -67,10 +67,16 @@
 
                     </form>
                 </div>
-                    <div class="col-2">
+                <div class="col-5">
+                    <div class="col-5">
                         <h4> Telefono </h4>
+                        <h5> 0800-123-acopio</h5>
                     </div>
-
+                    <div class="col-5">
+                        <h4> Direccion </h4>
+                        <h5> Calle falsa 123</h5>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
