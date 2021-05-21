@@ -13,6 +13,6 @@ class View
     {
         $smarty = new Smarty();
         $smarty->assign('Titulo', 'Grupo 3 Metodologias');
-        $smarty->display('templates/recent.tpl');
+        $smarty->display('templates/index.tpl');
     }
 }
