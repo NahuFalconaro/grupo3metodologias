@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-05-22 21:36:39
+/* Smarty version 3.1.34-dev-7, created on 2021-05-22 22:07:31
   from 'C:\xampp1\htdocs\grupo3metodologias\TPE\templates\formPedido.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60a95d47e6e8f6_48043754',
+  'unifunc' => 'content_60a964831c65c3_08903648',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60a95d47e6e8f6_48043754 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60a964831c65c3_08903648 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="contains-fluid contactanos">
     <div class="form-pedido">
         <div class="row">

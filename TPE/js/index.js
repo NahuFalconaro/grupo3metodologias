@@ -17,11 +17,11 @@ function navigate(url) {
      var form_data = new FormData(form);
 
      $.ajax({
-         url: 'http://localhost/grupo3metodologias/tpe/',
+         type: "POST",
+         url: 'http://localhost/grupo3metodologias/tpe/', //corregir url ? talves ese es el porque del error -> Uncaught SyntaxError: Unexpected token '<'
          contentType: false,
          processData: false,
          data: form_data,
-         type: "POST",
          success: function(res){
              console.log(JSON.parse(res));
              res = JSON.parse(res);
