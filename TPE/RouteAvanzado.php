@@ -10,7 +10,7 @@ $r = new Router();
 // rutas
 
 
-$r->addRoute("agregarPedido", "POST", "PedidoController", "agregarPedido");
+$r->addRoute("agregarpedido", "POST", "PedidoController", "formPedido");
 $r->addRoute("pedidos", "GET", "PedidoController", "formPedido");
 
 

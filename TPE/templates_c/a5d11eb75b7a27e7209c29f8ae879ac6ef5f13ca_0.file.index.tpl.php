@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-05-21 23:57:13
+/* Smarty version 3.1.34-dev-7, created on 2021-05-22 22:31:49
   from 'C:\xampp1\htdocs\grupo3metodologias\TPE\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60a82cb973f291_46166034',
+  'unifunc' => 'content_60a96a359d6e62_91620323',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a5d11eb75b7a27e7209c29f8ae879ac6ef5f13ca' => 
     array (
       0 => 'C:\\xampp1\\htdocs\\grupo3metodologias\\TPE\\templates\\index.tpl',
-      1 => 1621634221,
+      1 => 1621715470,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60a82cb973f291_46166034 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60a96a359d6e62_91620323 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css">
     <?php echo '<script'; ?>
  src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"><?php echo '</script'; ?>
@@ -38,7 +39,6 @@ function content_60a82cb973f291_46166034 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 
 <body>
-    <div class="row">
     <header>
         <div class='header__top'>
             <h1>Servicio Metodologia Grupo 3</h1>
@@ -60,7 +60,6 @@ function content_60a82cb973f291_46166034 (Smarty_Internal_Template $_smarty_tpl)
             <p>Trabaja con Nosotros</p>
         </div>
     </div>
-    </div>
     <div class="main-content">
         <div class="row">
         </div>
@@ -68,13 +67,12 @@ function content_60a82cb973f291_46166034 (Smarty_Internal_Template $_smarty_tpl)
     <?php echo '<script'; ?>
  src="js/index.js"><?php echo '</script'; ?>
 >
-   <?php echo '<script'; ?>
+    <?php echo '<script'; ?>
  src="js/jquery-3.2.1.min.js"><?php echo '</script'; ?>
 >
-   <!-- <?php echo '<script'; ?>
+    <!-- <?php echo '<script'; ?>
  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
 >-->
 </body>
-
 </html><?php }
 }
