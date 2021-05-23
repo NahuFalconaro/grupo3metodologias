@@ -48,5 +48,6 @@ class PedidoController
         $franjaHoraria = $_POST["franja_horaria"];
 
         $this->pedidoModel->addPedido($nombre, $apellido, $ubicacion, $telefono, $imagen, $claseVehiculo, $franjaHoraria);
+        $this->view->ShowHome();
     }
 }
