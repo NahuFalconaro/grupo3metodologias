@@ -11,7 +11,7 @@
     <header>
        <div class='header__top'>
            <h1>Servicio Metodologia Grupo 3</h1>
-           <a href="#">Iniciar Sesion</a>
+           <a href="#" class='btnLogin'>Iniciar Sesion</a>
        </div> 
        <div class='header__bot'>
             <ul>
@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <div class='d-flex popup'>
+    <div class='d-none popup'>
         <div class="login">
             <h3>Iniciar Sesion</h3>
             <input type="text" classs='login__user' placeholder='User o Email'>
@@ -46,6 +46,23 @@
 
     </div>
 
-    <script src="../js/login.js"></script>
+    <script type='text/javascript'>
+        let display = document.querySelector('.popup');
+        let btnLogin = document.querySelector('.btnLogin');
+
+        let dis = false;
+
+        btnLogin.addEventListener('click', () => {
+           if(dis){
+               display.classList.remove('d-flex');
+               display.classList.add('d-none');
+               dis = false;
+           }else{
+                display.classList.remove('d-none');
+               display.classList.add('d-flex');
+               dis = true;
+           }
+        });
+    </script>
 </body>
 </html>

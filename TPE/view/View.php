@@ -5,8 +5,7 @@ require_once "libs/smarty/Smarty.class.php";
 class View
 {
 
-    function __construct()
-    {
+    function __construct(){
     }
 
     function ShowHome()
