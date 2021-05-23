@@ -1,7 +1,7 @@
 <?php
     require_once  "model/MaterialModel.php";
     require_once  "UserController.php";
-    require_once "view/View.php";
+    require_once  "view/View.php";
 
     class MaterialController
     {
@@ -41,7 +41,7 @@
         
         function updateMaterial($params = null){
             $this->userController->verifyUser();
-            $id_material = $params[':ID']
+            $id_material = $params[':ID'];
             $nombre = $_POST['nombreUpdate'];
             $aceptado = $_POST['aceptadoUpdate'];
             $descripcion = $_POST['descripcionUpdate'];

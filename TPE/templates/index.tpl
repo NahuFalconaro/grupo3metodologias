@@ -21,9 +21,9 @@
         <div class='header__bot'>
             <ul>
                 <li><a href='#'>Servicio</a></li>
-                <li><a href='#'>Cartelera</a></li>
+                <li><a href='materiales'>Cartelera</a></li>
                 <li><a href='#'>Trabaja Con Nosotros</a></li>
-                <li><a href='http://localhost/grupo3metodologias/tpe/form'>Contactanos</a></li>
+                <li><a href='formPedido'>Contactanos</a></li>
                 <li><a href='#'>Voluntarios</a></li>
             </ul>
         </div>

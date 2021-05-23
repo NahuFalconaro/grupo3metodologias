@@ -1,7 +1,7 @@
 <?php
 
-require_once "./Model/UserModel.php";
-require_once "./Model/View.php";
+require_once "model/UserModel.php";
+require_once "view/View.php";
 
 class UserController{
 
@@ -10,7 +10,7 @@ class UserController{
     private $modelUser;
 
     function __construct(){
-        $this->view = new UserView();
+        $this->view = new View();
         $this->model = new UserModel();
     }
 
@@ -18,7 +18,7 @@ class UserController{
         session_start();
         if(isset($_SESSION['ID_USER'])){
             $loged = $this->model->getUser($_SESSION['ID_USER']);
-            return $loged->access;
+            return $loged->admin;
         }else{
             return 0;
         }

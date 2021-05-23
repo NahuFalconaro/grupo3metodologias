@@ -10,20 +10,20 @@
                         <th scope="col"> Descripcion de entrega </th>
                     </tr>
                 </thead>
-            </table>
             <tbody>
-                {foreach from=$materiales item=material}
-                    <tr {$material->id_material}>
+                {foreach from=$Materiales item=material}
+                    <tr>
                         <td>{$material->nombre}</td>
                         <td>{$material->aceptado}</td>
                         <td>{$material->descripcion}</td>
-                        {if} <!--si esta log la secretaria-->
-                            <td><a href=" /{$material->id_material}">Editar</a> </td>
-                            <td><a href=" /{$material->id_material}">Borrar</a> </td>
-                        {/if}
+                       {if $Logged == 1} <!-- si esta log la secretaria-->
+                            <td><a href="updateMaterial/{$material->id_material}">Editar</a> </td>
+                            <td><a href="deleteMaterial/{$material->id_material}">Borrar</a> </td>
+                       {/if}
                     </tr>
                 {/foreach}
             </tbody>
+            </table>
         </div>
     </div>
 </div>

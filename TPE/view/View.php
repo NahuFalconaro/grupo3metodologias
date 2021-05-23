@@ -42,7 +42,7 @@ class View{
         $smarty = new Smarty();
         $smarty->assign('Materiales', $Materiales);
         $smarty->assign('Logged', $logged);
-        $smarty->display('template/materiales.tpl');
+        $smarty->display('templates/materiales.tpl');
     }
     function showError(){//muestra error al insertar o updatear un material y no existe el material o hay campos vacios
         $smarty = new Smarty();

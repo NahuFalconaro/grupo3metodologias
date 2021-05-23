@@ -2,6 +2,7 @@
 
 require_once 'controller/PedidoController.php';
 require_once "controller/IndexController.php";
+require_once "controller/MaterialController.php";
 require_once 'RouterClass.php';
 
 // CONSTANTES PARA RUTEO
@@ -21,7 +22,8 @@ $r->addRoute("pedidos", "GET", "PedidoController", "formPedido");
 // addRoute("palabra en URL", "Método", "Controlador encargado", "Nombre de funcion")
 
 $r->addRoute("home", "GET", "IndexController", "home");
-$r->addRoute("form", "GET", "IndexController", "formPedido");
+$r->addRoute("formPedido", "GET", "IndexController", "formPedido");
+$r->addRoute("materiales", "GET", "MaterialController", "showMateriales");
 $r->addRoute("submitForm", "POST", "PedidoController", "agregarPedido");
 $r->addRoute("loginscreen", "GET", "UserController", "Login");
 $r->addRoute("verifyUser", "POST", "UserController", "verifyUser");
