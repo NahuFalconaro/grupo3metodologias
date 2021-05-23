@@ -1,5 +1,6 @@
 <?php
 require_once 'controller/PedidoController.php';
+require_once "controller/IndexController.php";
 require_once 'RouterClass.php';
 
 // CONSTANTES PARA RUTEO
@@ -15,13 +16,16 @@ $r->addRoute("pedidos", "GET", "PedidoController", "formPedido");
 
 
 
+//Ejemplo:
+// addRoute("palabra en URL", "Método", "Controlador encargado", "Nombre de funcion")
 
-
+$r->addRoute("home", "GET", "IndexController", "home");
+$r->addRoute("form", "GET", "IndexController", "formPedido");
+$r->addRoute("submitForm", "POST", "PedidoController", "agregarPedido");
 
 //Rutas de ejemplo 
 
 
- $r->addRoute("formpedido", "GET", "PedidoController", "Home");
 // $r->addRoute("about", "GET", "GalleryController", "About");
 // $r->addRoute("contact", "GET", "GalleryController", "Contact");
 
@@ -43,7 +47,7 @@ $r->addRoute("pedidos", "GET", "PedidoController", "formPedido");
 
 
 //Ruta por defecto.
-$r->setDefaultRoute("pedidoController", "formPedido"); //tendria que haber un indexController y que el metodo se llame index o home
+$r->setDefaultRoute("IndexController", "home");
 
 //run
 $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']);
