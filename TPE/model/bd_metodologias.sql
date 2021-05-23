@@ -3,12 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-05-2021 a las 20:59:06
+-- Tiempo de generación: 23-05-2021 a las 20:34:03
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -26,7 +25,8 @@ SET time_zone = "+00:00";
 
 --
 -- Estructura de tabla para la tabla `materiales`
--- 
+--
+
 CREATE TABLE `materiales` (
   `id_materiales` int(11) NOT NULL,
   `nombre` varchar(20) NOT NULL,
@@ -39,10 +39,11 @@ CREATE TABLE `materiales` (
 --
 -- Estructura de tabla para la tabla `pedido`
 --
+
 CREATE TABLE `pedido` (
   `id_pedido` int(11) NOT NULL,
-  `nombre`varchar(20) NOT NULL,
-  `apellido` varchar (20) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `apellido` varchar(20) NOT NULL,
   `ubicacion` varchar(30) NOT NULL,
   `telefono` int(11) NOT NULL,
   `foto` varchar(100) DEFAULT NULL,
@@ -55,6 +56,7 @@ CREATE TABLE `pedido` (
 --
 -- Estructura de tabla para la tabla `usuario`
 --
+
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `usuario` varchar(20) NOT NULL,
