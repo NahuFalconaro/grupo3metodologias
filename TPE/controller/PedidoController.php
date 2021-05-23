@@ -22,6 +22,6 @@ class PedidoController
 
     function agregarPedido()
     {
-        print_r($_POST);
+        $this->pedidoModel->addPedido($_POST["nombre"], $_POST["apellido"], $_POST["telefono"], $_POST["franja_horaria"], $_POST["clase_vehiculo"], $_POST["direccion"]);
     }
 }
