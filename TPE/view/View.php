@@ -12,7 +12,7 @@ class View{
         $smarty->assign('Titulo', 'Grupo 3 Metodologias');
         $smarty->display('templates/index.tpl');
     }
-
+    
     function ShowLogin(){
         $smarty = new Smarty();
         $smarty->display('templates/ShowLogin.tpl');
@@ -36,6 +36,17 @@ class View{
     function Form(){
         $smarty = new Smarty();
         $smarty->display('templates/formPedido.tpl');
+    }
+
+    function ShowMateriales($Materiales, $logged){
+        $smarty = new Smarty();
+        $smarty->assign('Materiales', $Materiales);
+        $smarty->assign('Logged', $logged);
+        $smarty->display(...);
+    }
+    function showError(){//muestra error al insertar o updatear un material y no existe el material o hay campos vacios
+        $smarty = new Smarty();
+        $smarty->display('templates/showErrorMaterial.tpl');
     }
 
 }
