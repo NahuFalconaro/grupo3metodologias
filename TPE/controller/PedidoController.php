@@ -13,7 +13,7 @@ class PedidoController
 
     function __construct()
     {
-        $pedidoModel = new PedidoModel();
+        $this->pedidoModel = new PedidoModel();
         $this->view = new View();
     }
 
@@ -22,6 +22,14 @@ class PedidoController
 
     function agregarPedido()
     {
-        $this->pedidoModel->addPedido($_POST["nombre"], $_POST["apellido"], $_POST["telefono"], $_POST["franja_horaria"], $_POST["clase_vehiculo"], $_POST["direccion"]);
+
+        $nombre = $_POST["nombre"];
+        $apellido = $_POST["apellido"];
+        $ubicacion = $_POST["direccion"];
+        $telefono = $_POST["telefono"];
+        $claseVehiculo = $_POST["clase_vehiculo"];
+        $franjaHoraria = $_POST["franja_horaria"];
+
+        $this->pedidoModel->addPedido($nombre, $apellido, $ubicacion, $telefono, $claseVehiculo, $franjaHoraria);
     }
 }

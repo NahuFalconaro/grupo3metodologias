@@ -10,8 +10,9 @@ class PedidoModel
     }
 
     //Formlario Nombre, Apeliido, ubicacion id, foto, clase vehiculo, telefono
-    function AddPedido($nombre, $apellido, $ubicacion, $telefono, $claseVehiculo, $franjaHoraria)
+    function addPedido($nombre, $apellido, $ubicacion, $telefono, $claseVehiculo, $franjaHoraria)
     {
+
         //si está seteada, quiere decir que hay una imagen en la carpeta temporal de php.
         //si no lo está, entonces estoy colocando una foto por default y no me importa el "fileTemp", solo el "filePath".
         // if (isset($imagen["fileTemp"])) {
