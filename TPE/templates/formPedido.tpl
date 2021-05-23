@@ -2,27 +2,34 @@
     <div class="form-pedido">
         <div class="row">
             <div class="col-6">
-                <form class="row " enctype="multipart/form-data" onsubmit="savePedido(this, event)">
-                    <input type="hidden" id="" name="id_pedido" value="{$pedido['id_pedido']}">
+                <form class="row " enctype="multipart/form-data" 
+                {* WTF is this *}
+                {* onsubmit="savePedido(this, event)" *}
+                action="submitForm" method="post"
+                >
+                    <input type="hidden" id="" name="id_pedido">
                     <div class="row justify-content-start">
                         <div class="col-5">
-                            <input type="text" class="form-control" id="" name="nombre" value="{$pedido['nombre']}" placeholder="Nombre" required>
+                            <input type="text" class="form-control" id="" name="nombre" placeholder="Nombre" required>
                         </div>
                         <div class="col-5">
-                            <input type="text" class="form-control" id="" name="apellido" value="{$pedido['apellido']}" placeholder="Apellido" required>
-                        </div>
-                    </div>
-                    <div class="row justify-content-start ">
-                        <div class="col-5">
-                            <input type="tel" class="form-control" id="" name="telefono" value="{$pedido['telefono']}" placeholder="Telefono" required>
-                        </div>
-                        <div class="col-5">
-                            <input type="time" class="form-control" id="" name="horario" value="{$pedido['franja_horaria']}" placeholder="Franja horaria" required>
+                            <input type="text" class="form-control" id="" name="apellido" placeholder="Apellido"
+                                required>
                         </div>
                     </div>
                     <div class="row justify-content-start ">
                         <div class="col-5">
-                            <select name="vehiculo" value="{$pedido['clase_vehiculo']}" id="vehiculo-requerido" class="form-select" required>
+                            <input type="tel" class="form-control" id="" name="telefono" placeholder="Telefono"
+                                required>
+                        </div>
+                        <div class="col-5">
+                            <input type="time" class="form-control" id="" name="franja_horaria"
+                                placeholder="Franja horaria" required>
+                        </div>
+                    </div>
+                    <div class="row justify-content-start ">
+                        <div class="col-5">
+                            <select name="clase_vehiculo" id="vehiculo-requerido" class="form-select" required>
                                 <option value="a"> Carrito </option>
                                 <!--creo que es asi el value-->
                                 <option value="b"> Auto </option>
@@ -31,12 +38,12 @@
                             </select>
                         </div>
                         <div class="col-5">
-                            <input type="text" class="form-control" id="" name="direccion" value="{$pedido['direccion']}" placeholder="Dirección" required>
+                            <input type="text" class="form-control" id="" name="direccion" placeholder="Dirección" required>
                         </div>
                     </div>
                     <div class="row justify-content-start ">
                         <div class="col-10">
-                            <input type="file" class="form-control" value="{$pedido['foto']}" placeholder="Imagen">
+                            <input type="file" class="form-control" name="foto" placeholder="Imagen">
                         </div>
                     </div>
                     <div class="row justify-content-start "></div>

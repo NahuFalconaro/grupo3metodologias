@@ -16,7 +16,8 @@ class View
         $smarty->display('templates/index.tpl');
     }
 
-    function Form(){
+    function Form()
+    {
         $smarty = new Smarty();
         $smarty->display('templates/formPedido.tpl');
     }

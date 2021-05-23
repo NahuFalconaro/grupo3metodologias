@@ -20,17 +20,8 @@ class PedidoController
     //$params = lo que te tre el router despues de la "/"
     //$params = null
 
-    function agregarPedido(){
-
-        
+    function agregarPedido()
+    {
+        print_r($_POST);
     }
-
-    function formPedido(){
-        $this->view->showHome();
-    }
-
-    function home(){
-        $this->view->Form();
-    }
-
 }
