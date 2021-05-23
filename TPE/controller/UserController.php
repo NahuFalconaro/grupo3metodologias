@@ -52,6 +52,22 @@ class UserController{
             $this->view->ShowErrorEmptyFields();
     }
 
+    private function checkLoggedIn(){
+        session_start();
+        
+        if(!isset($_SESSION["USERNAME"])){
+            header("Location: ". BASE_URL);
+            die();
+        }else{
+            if ( isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 300000)) { 
+                header("Location: ". LOGOUT);
+                die();
+            } 
+        
+            $_SESSION['LAST_ACTIVITY'] = time();
+        }
+    }
+
 }
 
 
