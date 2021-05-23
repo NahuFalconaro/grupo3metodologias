@@ -1,4 +1,5 @@
 <?php
+
 require_once 'controller/PedidoController.php';
 require_once "controller/IndexController.php";
 require_once 'RouterClass.php';
@@ -22,6 +23,9 @@ $r->addRoute("pedidos", "GET", "PedidoController", "formPedido");
 $r->addRoute("home", "GET", "IndexController", "home");
 $r->addRoute("form", "GET", "IndexController", "formPedido");
 $r->addRoute("submitForm", "POST", "PedidoController", "agregarPedido");
+$r->addRoute("loginscreen", "GET", "UserController", "Login");
+$r->addRoute("verifyUser", "POST", "UserController", "verifyUser");
+$r->addRoute("logout", "GET", "UserController", "Logout");
 
 //Rutas de ejemplo 
 
@@ -31,7 +35,7 @@ $r->addRoute("submitForm", "POST", "PedidoController", "agregarPedido");
 
 // //parte del registro y login
 // $r->addRoute("register", "POST", "LoginController", "Register");
-// $r->addRoute("loginscreen", "GET", "LoginController", "Login");
+
 
 
 // //all about that ABM
@@ -51,3 +55,6 @@ $r->setDefaultRoute("IndexController", "home");
 
 //run
 $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']);
+
+
+?>
