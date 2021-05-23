@@ -1,7 +1,8 @@
+{include file="index.tpl"}
 <div class="contains-fluid contactanos">
     <div class="form-pedido">
         <div class="row">
-            <div class="col-6">
+            <div class="col-7">
                 <form class="row " enctype="multipart/form-data" 
                 {* WTF is this *}
                 {* onsubmit="savePedido(this, event)" *}
@@ -9,26 +10,26 @@
                 >
                     <input type="hidden" id="" name="id_pedido">
                     <div class="row justify-content-start">
-                        <div class="col-5">
+                        <div class="col-6">
                             <input type="text" class="form-control" id="" name="nombre" placeholder="Nombre" required>
                         </div>
-                        <div class="col-5">
+                        <div class="col-6">
                             <input type="text" class="form-control" id="" name="apellido" placeholder="Apellido"
                                 required>
                         </div>
                     </div>
                     <div class="row justify-content-start ">
-                        <div class="col-5">
+                        <div class="col-6">
                             <input type="tel" class="form-control" id="" name="telefono" placeholder="Telefono"
                                 required>
                         </div>
-                        <div class="col-5">
+                        <div class="col-6">
                             <input type="time" class="form-control" id="" name="franja_horaria"
                                 placeholder="Franja horaria" required>
                         </div>
                     </div>
                     <div class="row justify-content-start ">
-                        <div class="col-5">
+                        <div class="col-6">
                             <select name="clase_vehiculo" id="vehiculo-requerido" class="form-select" required>
                                 <option value="a"> Carrito </option>
                                 <!--creo que es asi el value-->
@@ -37,12 +38,12 @@
                                 <option value="d"> Camion </option>
                             </select>
                         </div>
-                        <div class="col-5">
+                        <div class="col-6">
                             <input type="text" class="form-control" id="" name="direccion" placeholder="Dirección" required>
                         </div>
                     </div>
                     <div class="row justify-content-start ">
-                        <div class="col-10">
+                        <div class="col-12">
                             <input type="file" class="form-control" name="foto" placeholder="Imagen">
                         </div>
                     </div>
@@ -53,12 +54,12 @@
 
                 </form>
             </div>
-            <div class="col-5">
-                <div class="col-5">
+            <div class="col-4 contacto_acopio">
+                <div class="col-6">
                     <h4> Telefono </h4>
                     <h5> 0800-123-acopio</h5>
                 </div>
-                <div class="col-5">
+                <div class="col-6">
                     <h4> Direccion </h4>
                     <h5> Calle falsa 123</h5>
                 </div>
