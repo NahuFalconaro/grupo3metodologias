@@ -14,7 +14,7 @@
                 {foreach from=$Materiales item=material}
                     <tr>
                         <td>{$material->nombre}</td>
-                        <td>{$material->aceptado}</td>
+                        <td>{if $material->aceptado == 1} SI {else} NO {/if}</td>
                         <td>{$material->descripcion}</td>
                        {if $Logged == 1} <!-- si esta log la secretaria-->
                             <td><a href="updateMaterial/{$material->id_material}">Editar</a> </td>
