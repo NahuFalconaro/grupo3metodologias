@@ -40,7 +40,6 @@
                             <input type="file" class="form-control" name="foto" placeholder="Imagen">
                         </div>
                     </div>
-                    <div class="row justify-content-start "></div>
                     <div class="d-grid gap-2 col-2">
                         <button class="btn btn-primary" type="submit"> enviar</button>
                     </div>

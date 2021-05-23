@@ -12,7 +12,7 @@ class View{
         $smarty->assign('Titulo', 'Grupo 3 Metodologias');
         $smarty->display('templates/index.tpl');
     }
-    
+
     function ShowLogin(){
         $smarty = new Smarty();
         $smarty->display('templates/ShowLogin.tpl');
@@ -48,7 +48,6 @@ class View{
         $smarty = new Smarty();
         $smarty->display('templates/showErrorMaterial.tpl');
     }
-
 }
 
 

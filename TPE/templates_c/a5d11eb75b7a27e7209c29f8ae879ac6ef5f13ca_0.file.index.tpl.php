@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-05-23 21:29:35
+/* Smarty version 3.1.34-dev-7, created on 2021-05-23 22:59:22
   from 'C:\xampp1\htdocs\grupo3metodologias\TPE\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60aaad1f1f2ec6_97446322',
+  'unifunc' => 'content_60aac22a9fc688_33647054',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a5d11eb75b7a27e7209c29f8ae879ac6ef5f13ca' => 
     array (
       0 => 'C:\\xampp1\\htdocs\\grupo3metodologias\\TPE\\templates\\index.tpl',
-      1 => 1621798085,
+      1 => 1621803484,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60aaad1f1f2ec6_97446322 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60aac22a9fc688_33647054 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -46,9 +46,9 @@ function content_60aaad1f1f2ec6_97446322 (Smarty_Internal_Template $_smarty_tpl)
         <div class='header__bot'>
             <ul>
                 <li><a href='#'>Servicio</a></li>
-                <li><a href='#'>Cartelera</a></li>
+                <li><a href='materiales'>Cartelera</a></li>
                 <li><a href='#'>Trabaja Con Nosotros</a></li>
-                <li><a href='http://localhost/grupo3metodologias/tpe/form'>Contactanos</a></li>
+                <li><a href='formPedido'>Contactanos</a></li>
                 <li><a href='#'>Voluntarios</a></li>
             </ul>
         </div>

@@ -21,10 +21,10 @@
             $this->view->showMateriales($materiales, $logged);
         }
         function insertMaterial(){
-            $this->userController->verifyUser();
-            $nombre = $_POST['nombreInsert'];
-            $aceptado = $_POST['aceptadoInsert'];
-            $descripcion = $_POST['descripcionInsert'];
+           // $this->userController->verifyUser();
+            $nombre = $_POST['nombre'];
+            $aceptado = $_POST['aceptado'];
+            $descripcion = $_POST['descripcion'];
             if(!empty($nombre) && !empty($aceptado) && !empty($descripcion)){
                 $this->modelMaterial->insertMaterial($nombre, $aceptado, $descripcion);
                 $this->view->showMateriales();

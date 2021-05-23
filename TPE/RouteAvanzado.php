@@ -23,6 +23,7 @@ $r->addRoute("pedidos", "GET", "PedidoController", "formPedido");
 
 $r->addRoute("home", "GET", "IndexController", "home");
 $r->addRoute("formPedido", "GET", "IndexController", "formPedido");
+$r->addRoute("insertMaterial", "POST", "MaterialController", "insertMaterial");
 $r->addRoute("materiales", "GET", "MaterialController", "showMateriales");
 $r->addRoute("submitForm", "POST", "PedidoController", "agregarPedido");
 $r->addRoute("loginscreen", "GET", "UserController", "Login");
