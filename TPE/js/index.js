@@ -1,34 +1,16 @@
 'use strict'
 
-$(document).ready(function() {
-    navigate('http://localhost/grupo3metodologias/tpe/formpedido');
-  });
 
-function navigate(url) {
-    $.get(url, function (data) {
-        $('.main-content').html(data);
+var myPopUp = 'http://localhost/grupo3metodologias/tpe/confirmacionEditMaterial';
+//document.getElementById('editMaterial');
+
+//function myFuntion(){
+ //   document.getElementById('editMaterial').click().open.window(myPopUp);
+//};
+
+document.addEventListener('DOMContentLoaded', function(){
+    var clickEdit = document.getElementById('editMaterial');
+    clickEdit.addEventListener('click', function(event){
+        event
     });
-}
-
-//falta arreglar porque no anda
- function savePedido(form, event){
-     event.preventDefault();
-
-     var form_data = new FormData(form);
-
-     $.ajax({
-         type: "POST",
-         url: 'http://localhost/grupo3metodologias/tpe/', //corregir url ? talves ese es el porque del error -> Uncaught SyntaxError: Unexpected token '<'
-         contentType: false,
-         processData: false,
-         data: form_data,
-         success: function(res){
-             console.log(JSON.parse(res));
-             res = JSON.parse(res);
-
-         },
-         error : function(err){
-             console.error(err);
-         }
-     });
- }
+});
