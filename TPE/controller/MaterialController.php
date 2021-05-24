@@ -27,7 +27,7 @@
             $descripcion = $_POST['descripcion'];
             if(!empty($nombre) && !empty($aceptado) && !empty($descripcion)){
                 $this->modelMaterial->insertMaterial($nombre, $aceptado, $descripcion);
-                $this->view->showMateriales($materiales, $logged);
+                $this->view->showMateriales($materiales, $logged); // arreglar porque tira error
             }else{
                 $this->view->showError();
             }
@@ -49,6 +49,7 @@
             if(!empty($existeMaterial)){
                 if(isset($nombre) && isset($aceptado) && isset($descripcion)){
                     $this->model->updateMaterial($id, $nombre, $aceptado, $descripcion); 
+                    $this->view->showUpdateMaterial($params);
                 }
             }else{
                 $this->view->showError();

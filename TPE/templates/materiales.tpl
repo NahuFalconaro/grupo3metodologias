@@ -16,10 +16,11 @@
                             <td>{$material->nombre}</td>
                             <td>{if $material->aceptado == 1} SI {else} NO {/if}</td>
                             <td>{$material->descripcion}</td>
-                            {if $Logged == 1}<!-- si esta log la secretaria-->
-                                <td><a href="updateMaterial/{$material->id_material}">Editar</a> </td>
-                                <td><a href="deleteMaterial/{$material->id_material}">Borrar</a> </td>
-                            {/if}
+                                <td><a href="updateMaterial/{$material->id_material}" id="editMaterial">Editar</a> 
+                                <!-- onclick="window.open(this.href, 'targetWindow',
+                                'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=SomeSize, height=SomeSize')"-->
+                                 </td>
+                                <td><a href="deleteMaterial/{$material->id_material}" id="deleteMaterial">Borrar</a> </td>
                         </tr>
                     {/foreach}
                 </tbody>

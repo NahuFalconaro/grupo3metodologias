@@ -29,7 +29,7 @@ $r->addRoute("submitForm", "POST", "PedidoController", "agregarPedido");
 $r->addRoute("loginscreen", "GET", "UserController", "Login");
 $r->addRoute("verifyUser", "POST", "UserController", "verifyUser");
 $r->addRoute("logout", "GET", "UserController", "Logout");
-
+$r->addRoute("updateMaterial/:ID", "POST", "MaterialController", "updateMaterial");
 //Rutas de ejemplo 
 
 
