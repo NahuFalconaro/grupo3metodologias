@@ -54,7 +54,6 @@
                         </div>
                     </form>
                 </div>
-            <!--{/if}-->
         </div>
     </div>
 </div>
