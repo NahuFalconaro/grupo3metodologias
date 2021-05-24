@@ -48,6 +48,12 @@ class View{
         $smarty = new Smarty();
         $smarty->display('templates/showErrorMaterial.tpl');
     }
+
+    function showUpdateMaterial(){
+        $smarty = new Smarty();
+        $smarty->display('templates/updateMaterial.tpl');
+    }
+
 }
 
 
