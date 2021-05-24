@@ -1,16 +1,18 @@
 'use strict'
+let display = document.querySelector('.popup');
+let btnLogin = document.querySelector('.btnLogin');
 
+let dis = false;
 
-var myPopUp = 'http://localhost/grupo3metodologias/tpe/confirmacionEditMaterial';
-//document.getElementById('editMaterial');
-
-//function myFuntion(){
- //   document.getElementById('editMaterial').click().open.window(myPopUp);
-//};
-
-document.addEventListener('DOMContentLoaded', function(){
-    var clickEdit = document.getElementById('editMaterial');
-    clickEdit.addEventListener('click', function(event){
-        event
-    });
+btnLogin.addEventListener('click', () => {
+   if(dis){
+       display.classList.remove('d-flex');
+       display.classList.add('d-none');
+       dis = false;
+   }else{
+        display.classList.remove('d-none');
+       display.classList.add('d-flex');
+       dis = true;
+   }
 });
+
