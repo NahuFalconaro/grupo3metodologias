@@ -27,7 +27,7 @@
             $descripcion = $_POST['descripcion'];
             if(!empty($nombre) && !empty($aceptado) && !empty($descripcion)){
                 $this->modelMaterial->insertMaterial($nombre, $aceptado, $descripcion);
-                $this->view->showMateriales();
+                $this->view->showMateriales($materiales, $logged);
             }else{
                 $this->view->showError();
             }
@@ -42,9 +42,9 @@
         function updateMaterial($params = null){
             $this->userController->verifyUser();
             $id_material = $params[':ID'];
-            $nombre = $_POST['nombreUpdate'];
-            $aceptado = $_POST['aceptadoUpdate'];
-            $descripcion = $_POST['descripcionUpdate'];
+            $nombre = $_POST['nombre'];
+            $aceptado = $_POST['aceptado'];
+            $descripcion = $_POST['descripcion'];
             $existeMaterial = $this->modelMaterial->getMaterial($id_material);
             if(!empty($existeMaterial)){
                 if(isset($nombre) && isset($aceptado) && isset($descripcion)){

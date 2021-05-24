@@ -18,7 +18,7 @@
 
     function insertMaterial($nombre, $aceptado, $descripcion){
         $query = $this->db->prepare("INSERT INTO materiales(nombre, aceptado, descripcion) VALUES(?,?,?)");
-        $query->execute(array($name, $aceptado, $descripcion));
+        $query->execute(array($nombre, $aceptado, $descripcion));
     }
 
     function deleteMaterial($id){
