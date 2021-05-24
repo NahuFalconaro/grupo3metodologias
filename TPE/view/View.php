@@ -38,6 +38,16 @@ class View{
         $smarty->display('templates/formPedido.tpl');
     }
 
+    function ShowMateriales($Materiales, $logged){
+        $smarty = new Smarty();
+        $smarty->assign('Materiales', $Materiales);
+        $smarty->assign('Logged', $logged);
+        $smarty->display('templates/materiales.tpl');
+    }
+    function showError(){//muestra error al insertar o updatear un material y no existe el material o hay campos vacios
+        $smarty = new Smarty();
+        $smarty->display('templates/showErrorMaterial.tpl');
+    }
 }
 
 

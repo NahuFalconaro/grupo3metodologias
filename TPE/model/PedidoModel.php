@@ -10,16 +10,18 @@ class PedidoModel
     }
 
     //Formlario Nombre, Apeliido, ubicacion id, foto, clase vehiculo, telefono
-    function addPedido($nombre, $apellido, $ubicacion, $telefono, $claseVehiculo, $franjaHoraria)
+    function addPedido($nombre, $apellido, $ubicacion, $telefono, $imagen, $claseVehiculo, $franjaHoraria)
     {
 
         //si está seteada, quiere decir que hay una imagen en la carpeta temporal de php.
-        //si no lo está, entonces estoy colocando una foto por default y no me importa el "fileTemp", solo el "filePath".
-        // if (isset($imagen["fileTemp"])) {
-        //     move_uploaded_file($imagen["fileTemp"], $imagen["filePath"]);
-        // }
+        if (isset($imagen["fileTemp"])) {
+            move_uploaded_file($imagen["fileTemp"], $imagen["filePath"]);
+            $imagen = $imagen["filePath"];
+        } else {
+            $imagen = null;
+        }
 
-        $sentencia = $this->db->prepare("INSERT INTO pedido(nombre, apellido, ubicacion, telefono, clase_vehiculo ,franja_horaria) VALUES(?,?,?,?,?,?)");
-        $sentencia->execute(array($nombre, $apellido, $ubicacion, $telefono, $claseVehiculo, $franjaHoraria));
+        $sentencia = $this->db->prepare("INSERT INTO pedido(nombre, apellido, ubicacion, telefono, foto, clase_vehiculo ,franja_horaria) VALUES(?,?,?,?,?,?,?)");
+        $sentencia->execute(array($nombre, $apellido, $ubicacion, $telefono, $imagen, $claseVehiculo, $franjaHoraria));
     }
 }

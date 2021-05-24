@@ -11,14 +11,14 @@
     }
 
     function getMateriales(){
-        $query = $this->db->prepare("SELECT nombre, descripcion FROM materiales WHERE materiales.aceptado = true");
+        $query = $this->db->prepare("SELECT * FROM materiales");
         $query->execute();
-        return $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
     function insertMaterial($nombre, $aceptado, $descripcion){
         $query = $this->db->prepare("INSERT INTO materiales(nombre, aceptado, descripcion) VALUES(?,?,?)");
-        $query->execute(array($name, $aceptado, $descripcion));
+        $query->execute(array($nombre, $aceptado, $descripcion));
     }
 
     function deleteMaterial($id){

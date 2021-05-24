@@ -3,29 +3,22 @@
     <div class="form-pedido">
         <div class="row">
             <div class="col-7">
-                <form class="row " enctype="multipart/form-data" 
-                {* WTF is this *}
-                {* onsubmit="savePedido(this, event)" *}
-                action="submitForm" method="post"
-                >
+                <form class="row " enctype="multipart/form-data" action="submitForm" method="post">
                     <input type="hidden" id="" name="id_pedido">
                     <div class="row justify-content-start">
                         <div class="col-6">
                             <input type="text" class="form-control" id="" name="nombre" placeholder="Nombre" required>
                         </div>
                         <div class="col-6">
-                            <input type="text" class="form-control" id="" name="apellido" placeholder="Apellido"
-                                required>
+                            <input type="text" class="form-control" id="" name="apellido" placeholder="Apellido" required>
                         </div>
                     </div>
                     <div class="row justify-content-start ">
                         <div class="col-6">
-                            <input type="tel" class="form-control" id="" name="telefono" placeholder="Telefono"
-                                required>
+                            <input type="tel" class="form-control" id="" name="telefono" placeholder="Telefono" required>
                         </div>
                         <div class="col-6">
-                            <input type="time" class="form-control" id="" name="franja_horaria"
-                                placeholder="Franja horaria" required>
+                            <input type="time" class="form-control" id="" name="franja_horaria" placeholder="Franja horaria" required>
                         </div>
                     </div>
                     <div class="row justify-content-start ">
@@ -47,11 +40,9 @@
                             <input type="file" class="form-control" name="foto" placeholder="Imagen">
                         </div>
                     </div>
-                    <div class="row justify-content-start "></div>
                     <div class="d-grid gap-2 col-2">
                         <button class="btn btn-primary" type="submit"> enviar</button>
                     </div>
-
                 </form>
             </div>
             <div class="col-4 contacto_acopio">
