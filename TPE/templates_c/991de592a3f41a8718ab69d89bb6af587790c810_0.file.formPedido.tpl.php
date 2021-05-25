@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-05-23 23:25:50
+/* Smarty version 3.1.34-dev-7, created on 2021-05-25 00:13:43
   from 'C:\xampp1\htdocs\grupo3metodologias\TPE\templates\formPedido.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60aac85e941d13_90516472',
+  'unifunc' => 'content_60ac251755ea30_33376549',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '991de592a3f41a8718ab69d89bb6af587790c810' => 
     array (
       0 => 'C:\\xampp1\\htdocs\\grupo3metodologias\\TPE\\templates\\formPedido.tpl',
-      1 => 1621805147,
+      1 => 1621805157,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:index.tpl' => 1,
   ),
 ),false)) {
-function content_60aac85e941d13_90516472 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60ac251755ea30_33376549 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:index.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="contains-fluid contactanos">
@@ -65,7 +65,6 @@ $_smarty_tpl->_subTemplateRender("file:index.tpl", $_smarty_tpl->cache_id, $_sma
                             <input type="file" class="form-control" name="foto" placeholder="Imagen">
                         </div>
                     </div>
-                    <!--<div class="row justify-content-start "></div>-->
                     <div class="d-grid gap-2 col-2">
                         <button class="btn btn-primary" type="submit"> enviar</button>
                     </div>
