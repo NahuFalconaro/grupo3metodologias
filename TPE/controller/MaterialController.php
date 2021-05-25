@@ -34,9 +34,9 @@
             }
         }
         function deleteMaterial($params = null){
-            $this->userController->verifyUser();
+            //$logged = $this->userController->getAccess();
             $id = $params[':ID'];
-            $this->modemodelMateriall->deleteMaterial($id);
+            $this->modelMaterial->deleteMaterial($id);
             $this->view->ShowHomeLocation();
         }
         
