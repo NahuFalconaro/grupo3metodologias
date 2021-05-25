@@ -21,12 +21,13 @@
             $this->view->showMateriales($materiales, $logged);
         }
         function insertMaterial(){
-           // $this->userController->verifyUser();
+            $logged = $this->userController->getAccess(); 
             $nombre = $_POST['nombre'];
             $aceptado = $_POST['aceptado'];
             $descripcion = $_POST['descripcion'];
             if(!empty($nombre)){// la descripcion no es necesaria si el material no es aceptado
                 $this->modelMaterial->insertMaterial($nombre, $aceptado, $descripcion);
+                $materiales = $this->modelMaterial->getMateriales();
                 $this->view->showMateriales($materiales, $logged); // arreglar porque tira error
             }else{
                 $this->view->showError();
@@ -58,7 +59,7 @@
 
         function getEditMaterial($params = null){
             $id_materiales = $params[':ID'];
-            $Material = $this->model->getMaterial($id_materiales);
+            $Material = $this->modelMaterial->getMaterial($id_materiales);
             $this->view->showUpdateMaterial($Material);
         }
 
