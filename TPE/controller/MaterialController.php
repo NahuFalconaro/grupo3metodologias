@@ -40,7 +40,7 @@
         }
         
         function updateMaterial($params = null){
-            $this->userController->verifyUser();
+            //$this->userController->verifyUser();
             $id_material = $params[':ID'];
             $nombre = $_POST['nombre'];
             $aceptado = $_POST['aceptado'];
