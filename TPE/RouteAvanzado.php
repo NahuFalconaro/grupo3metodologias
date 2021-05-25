@@ -31,8 +31,8 @@ $r->addRoute("loginscreen", "GET", "UserController", "Login");
 $r->addRoute("verifyUser", "POST", "UserController", "verifyUser");
 $r->addRoute("logout", "GET", "UserController", "Logout");
 
-
 $r->addRoute("getEditMaterial/:ID", "GET", "MaterialController", "getEditMaterial");
+$r->addRoute("updateMaterial/:ID", "POST", "MaterialController", "updateMaterial");
 //Rutas de ejemplo 
 
 

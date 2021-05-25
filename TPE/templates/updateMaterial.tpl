@@ -9,16 +9,16 @@
                 <form action="updateMaterial/{$Materiales->id_material}" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label class="form-label"> Material: </label>
-                        <input type="text" class="form-group" value="{$Materiales->nombre}" name="nombre" placeholder="Material" required>
+                        <input type="text" class="form-group" value="{$Materiales->nombre}" name="nombreUpdate" placeholder="Material" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label"> Aceptado 1 Si 0 No: </label>
-                        <input type="number" min="0" max="1" value="{$Materiales->aceptado}" class="form-group" id="" name="aceptado"
+                        <input type="number" min="0" max="1" value="{$Materiales->aceptado}" class="form-group" id="" name="aceptadoUpdate"
                             placeholder="Aceptado" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label"> Descripcion: </label>
-                        <input type="text" max="200" value="{$Materiales->descripcion}" class="form-group" id="" name="descripcion"
+                        <input type="text" max="200" value="{$Materiales->descripcion}" class="form-group" id="" name="descripcionUpdate"
                             placeholder="Descripcion">
                     </div>
                 </form>

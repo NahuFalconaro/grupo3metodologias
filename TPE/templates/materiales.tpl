@@ -16,7 +16,7 @@
                             <td>{$material->nombre}</td>
                             <td>{if $material->aceptado == 1} SI {else} NO {/if}</td>
                             <td>{$material->descripcion}</td>
-                                <td ><a href="getEditMaterial/{$material->id_materiales}" id="">Editar</a>
+                                <td ><a href="getEditMaterial/{$material->id_materiales}" id="deleteMaterial">Editar</a>
                                     <!-- onclick="window.open(this.href, 'targetWindow',
                                 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=SomeSize, height=SomeSize')"-->
                                 </td>
