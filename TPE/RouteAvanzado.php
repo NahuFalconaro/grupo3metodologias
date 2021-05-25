@@ -32,6 +32,7 @@ $r->addRoute("logout", "GET", "UserController", "Logout");
 
 
 $r->addRoute("getEditMaterial/:ID", "GET", "MaterialController", "getEditMaterial");
+$r->addRoute("updateMaterial/:ID", "POST", "MaterialController", "updateMaterial");
 //Rutas de ejemplo 
 
 
