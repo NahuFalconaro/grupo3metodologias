@@ -54,6 +54,9 @@ class View{
         $smarty->assign('Materiales', $Materiales);
         $smarty->display('templates/updateMaterial.tpl');
     }
+    function ShowHomeLocation(){
+        header("Location: ".BASE_URL."materiales");
+     }
 
 }
 

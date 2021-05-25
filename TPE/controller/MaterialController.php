@@ -28,7 +28,7 @@
             if(!empty($nombre)){// la descripcion no es necesaria si el material no es aceptado
                 $this->modelMaterial->insertMaterial($nombre, $aceptado, $descripcion);
                 $materiales = $this->modelMaterial->getMateriales();
-                $this->view->showMateriales($materiales, $logged); // arreglar porque tira error
+                $this->view->ShowHomeLocation(); // arreglar porque tira error
             }else{
                 $this->view->showError();
             }
