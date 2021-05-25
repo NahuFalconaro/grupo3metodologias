@@ -54,8 +54,13 @@
             }else{
                 $this->view->showError();
             }
-    }
+        }
 
+        function getEditMaterial($params = null){
+            $id_materiales = $params[':ID'];
+            $Material = $this->model->getMaterial($id_materiales);
+            $this->view->showUpdateMaterial($Material);
+        }
 
 
 
