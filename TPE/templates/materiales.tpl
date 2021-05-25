@@ -16,19 +16,18 @@
                             <td>{$material->nombre}</td>
                             <td>{if $material->aceptado == 1} SI {else} NO {/if}</td>
                             <td>{$material->descripcion}</td>
-                            {if $Logged == 1}
-                                <td><a href="updateMaterial/{$material->id_material}" id="editMaterial">Editar</a>
+                                <td ><a href="getEditMaterial/{$material->id_materiales}" id="">Editar</a>
                                     <!-- onclick="window.open(this.href, 'targetWindow',
                                 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=SomeSize, height=SomeSize')"-->
                                 </td>
-                                <td><a href="deleteMaterial/{$material->id_material}" id="deleteMaterial">Borrar</a> </td>
-                            {/if}
+                                <td><a href="deleteMaterial/{$material->id_materiales}" id="deleteMaterial">Borrar</a> </td>
                         </tr>
                     {/foreach}
                 </tbody>
             </table>
             <!--si esta log la secretaria-->
                 <div class="col-7">
+                    <h3>Agregar Material</h3>
                     <form class=" row " enctype=" multipart/form-data" action="insertMaterial" method="post">
                         <input type="hidden" id="" name="id_materiales">
                         <div class="row justify-content-start">

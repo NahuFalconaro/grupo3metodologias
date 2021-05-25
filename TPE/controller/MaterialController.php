@@ -25,7 +25,7 @@
             $nombre = $_POST['nombre'];
             $aceptado = $_POST['aceptado'];
             $descripcion = $_POST['descripcion'];
-            if(!empty($nombre) && !empty($aceptado) && !empty($descripcion)){
+            if(!empty($nombre)){// la descripcion no es necesaria si el material no es aceptado
                 $this->modelMaterial->insertMaterial($nombre, $aceptado, $descripcion);
                 $this->view->showMateriales($materiales, $logged); // arreglar porque tira error
             }else{
@@ -54,8 +54,13 @@
             }else{
                 $this->view->showError();
             }
-    }
+        }
 
+        function getEditMaterial($params = null){
+            $id_materiales = $params[':ID'];
+            $Material = $this->model->getMaterial($id_materiales);
+            $this->view->showUpdateMaterial($Material);
+        }
 
 
 

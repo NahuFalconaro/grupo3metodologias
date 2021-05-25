@@ -31,6 +31,12 @@
         $sentencia->execute(array($nombre, $aceptado, $descripcion, $id_material)); 
     }
 
+    function getMaterial($id_materiales){
+        $sentencia = $this->db->prepare("SELECT * FROM materiales WHERE id_materiales = ?");
+        $sentencia->execute(array($id_materiales));
+        return $sentencia->fetch(PDO::FETCH_OBJ);
+    }
+
      
 
 

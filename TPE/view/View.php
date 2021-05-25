@@ -49,8 +49,9 @@ class View{
         $smarty->display('templates/showErrorMaterial.tpl');
     }
 
-    function showUpdateMaterial(){
+    function showUpdateMaterial($Materiales){
         $smarty = new Smarty();
+        $smarty->assign('Materiales', $Materiales);
         $smarty->display('templates/updateMaterial.tpl');
     }
 
