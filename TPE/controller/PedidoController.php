@@ -15,6 +15,7 @@ class PedidoController
     {
         $this->pedidoModel = new PedidoModel();
         $this->view = new View();
+        define("BASE_URL", 'http://' . $_SERVER["SERVER_NAME"] . ':' . $_SERVER["SERVER_PORT"] . dirname($_SERVER["PHP_SELF"]) . '/home');
     }
 
     //$params = lo que te tre el router despues de la "/"
@@ -24,7 +25,7 @@ class PedidoController
     {
 
         $imagen = null;
-        
+
         if (isset($_FILES)) {
 
             if ($_FILES['foto']['type'] == "image/jpg" ||  $_FILES['foto']['type'] == "image/jpeg" || $_FILES['foto']['type'] == "image/png") {
@@ -48,6 +49,6 @@ class PedidoController
         $franjaHoraria = $_POST["franja_horaria"];
 
         $this->pedidoModel->addPedido($nombre, $apellido, $ubicacion, $telefono, $imagen, $claseVehiculo, $franjaHoraria);
-        $this->view->ShowHome();
+        header("Location: " . BASE_URL);
     }
 }
