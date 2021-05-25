@@ -52,7 +52,7 @@ class View{
     function showUpdateMaterial($Materiales){
         $smarty = new Smarty();
         $smarty->assign('Materiales', $Materiales);
-        $smarty->display('templates/updateMaterial.tpl');
+        $smarty->fetch('templates/updateMaterial.tpl');
     }
 
 }
