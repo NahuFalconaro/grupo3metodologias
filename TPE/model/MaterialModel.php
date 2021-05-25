@@ -27,7 +27,7 @@
     }
 
     function updateMaterial($id_material, $nombre, $aceptado, $descripcion){
-        $sentencia = $this->db->prepare("UPDATE materiales SET nombre=?, aceptado=?, descripcion=? WHERE materiales.id_materiales = ?");
+        $sentencia = $this->db->prepare("UPDATE materiales SET nombre=?, aceptado=?, descripcion=? WHERE id_materiales = ?");
         $sentencia->execute(array($nombre, $aceptado, $descripcion, $id_material)); 
     }
 

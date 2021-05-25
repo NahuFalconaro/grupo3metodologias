@@ -1,6 +1,6 @@
 {include file="index.tpl"}
 <div class="contains-fluid contactanos">
-    <div class="form-pedido">
+    <div class="form">
         <div class="row">
             <div class="col-7">
                 <form class="row " enctype="multipart/form-data" action="submitForm" method="post">
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <div class="d-grid gap-2 col-2">
-                        <button class="btn btn-primary" type="submit"> enviar</button>
+                        <button class="btn btn-primary" type="submit"> Enviar</button>
                     </div>
                 </form>
             </div>

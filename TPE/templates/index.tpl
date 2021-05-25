@@ -17,11 +17,11 @@
         </div>
         <div class='header__bot'>
             <ul>
-                <li><a href='materiales'>Servicio</a></li>
+                <li><a href='home'>Servicio</a></li>
                 <li><a href='materiales'>Cartelera</a></li>
-                <li><a href='#'>Trabaja Con Nosotros</a></li>
+                <li><a href=''>Trabaja Con Nosotros</a></li>
                 <li><a href='formPedido'>Contactanos</a></li>
-                <li><a href='#'>Voluntarios</a></li>
+                <li><a href=''>Voluntarios</a></li>
             </ul>
         </div>
     </header>

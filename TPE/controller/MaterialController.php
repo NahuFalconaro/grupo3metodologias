@@ -40,22 +40,17 @@
             $this->view->ShowHomeLocation();
         }
         
-        function UpdateMaterial($params = null){
+        function updateMaterial($params = null){
             //$this->userController->verifyUser();
             $id_material = $params[':ID'];
             $nombre = $_POST['nombreUpdate'];
             $aceptado = $_POST['aceptadoUpdate'];
             $descripcion = $_POST['descripcionUpdate'];
-            $existeMaterial = $this->modelMaterial->getMaterial($id_material);
-            if(!empty($existeMaterial)){
-                if(isset($nombre) && isset($aceptado) && isset($descripcion)){
-                    $this->modelMaterial->updateMaterial($id, $nombre, $aceptado, $descripcion); 
+                if(isset($nombre) && isset($aceptado)){
+                    $this->modelMaterial->updateMaterial($id_material, $nombre, $aceptado, $descripcion); 
                     $this->view->ShowHomeLocation();
                 }
-            }else{
-                $this->view->showError();
             }
-        }
 
         function getEditMaterial($params = null){
             $id_materiales = $params[':ID'];

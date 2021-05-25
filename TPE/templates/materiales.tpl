@@ -1,6 +1,6 @@
 {include file="index.tpl"}
 <div class="contains-fluid materiales">
-    <div class="tabla-materiales">
+    <div class="tabla-materiales form">
         <div class="row">
             <table class="table">
                 <thead>
@@ -26,7 +26,7 @@
                 </tbody>
             </table>
             <!--si esta log la secretaria-->
-                <div class="col-7">
+                <div class="col-7 form">
                     <h3>Agregar Material</h3>
                     <form class=" row " enctype=" multipart/form-data" action="insertMaterial" method="post">
                         <input type="hidden" id="" name="id_materiales">
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="d-grid gap-2 col-2">
-                            <button class="btn btn-primary" type="submit"> enviar</button>
+                            <button class="btn btn-primary" type="submit"> Enviar</button>
                         </div>
                     </form>
                 </div>
