@@ -14,12 +14,14 @@
             $this->view = new View();
             $this->userController = new UserController();
         }
-        
+        //Funcion la cual obtiene los materiales de la base de datos, consulta por el estado de acceso del usuario
+        //y lo pasa para que lo renderice la vista
         function showMateriales($params = null){
             $materiales = $this->modelMaterial->getMateriales(); 
             $logged = $this->userController->getAccess();   
             $this->view->showMateriales($materiales, $logged);
         }
+        //Funcion que inserta un material nuevo a la base de datos, obteniendo los datos desde formulario de la vista
         function insertMaterial(){
             $logged = $this->userController->getAccess(); 
             $nombre = $_POST['nombre'];
@@ -33,13 +35,13 @@
                 $this->view->showError();
             }
         }
+        //Funcion que eliminaun material de la base de datos
         function deleteMaterial($params = null){
-            //$logged = $this->userController->getAccess();
             $id = $params[':ID'];
             $this->modelMaterial->deleteMaterial($id);
             $this->view->ShowHomeLocation();
         }
-        
+        //Funcion que modifica un material de la base de datos
         function updateMaterial($params = null){
             //$this->userController->verifyUser();
             $id_material = $params[':ID'];
@@ -51,7 +53,7 @@
                     $this->view->ShowHomeLocation();
                 }
             }
-
+            //funcion que trae el material para editar y lo muestra en el view
         function getEditMaterial($params = null){
             $id_materiales = $params[':ID'];
             $Material = $this->modelMaterial->getMaterial($id_materiales);
