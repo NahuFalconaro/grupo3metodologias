@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +10,16 @@
     <link type="text/css" rel="stylesheet" href="css/formulario.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <div class='header__top'>
             <h1>Servicio Metodologia Grupo 3</h1>
+            {if $Logged == 0}
             <a href="#" class='btnLogin'>Iniciar Sesion</a>
+            {else}
+                <a href="logout" class="btnLogin">logout</a>
+            {/if}
         </div>
         <div class='header__bot'>
             <ul>
@@ -31,22 +37,21 @@
             <p id='pagina'>Trabaja con Nosotros</p>
         </div>
     </div>
-
+    {if $Logged == 0}
     <div class='d-none popup'>
-        <div class="login">
-            <h3>Iniciar Sesion</h3>
-            <input type="text" classs='login__user' placeholder='User o Email'>
-            <input type="password" class='login__password' placeholder='Password'>
-            <p><a href='#'>Olvidaste tu contrasena?</a></p>
-            <div class='btn login__sesion'> Iniciar Sesion</div>
-            <div class='login__barra'></div>
-            <div class='btn login_register'> Registrarse</div>
-        </div>
+        <form action="verifyUser" method="POST" class="form-inline">
+            <div class="login">
+                <h3 >Iniciar Sesion</h3>
+                <input type="text" classs='login__user' name="user" placeholder='User o Email'>
+                <input type="password" class='login__password' name="pass" placeholder='Password'>
+                <p><a href='#'>Olvidaste tu contrasena?</a></p>
+                <button type="submit" class="btn">Iniciar Sesion</button>
+                <div class='login__barra'></div>
+            </div>
+        </form>
     </div>
-
-    <div class='container'>
-    </div>
-
+    {/if}
     <script src="js/index.js"></script>
 </body>
+
 </html>

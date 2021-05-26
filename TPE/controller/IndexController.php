@@ -1,16 +1,19 @@
 <?php
 
-require_once "./model/PedidoModel.php";
-require_once "./view/View.php";
+require_once "model/PedidoModel.php";   
+require_once "UserController.php";
+require_once "view/View.php";
 
 class IndexController
 {
 
     private $view;
+    private $userController;
 
 
     function __construct()
-    {
+    {   
+        $this->userController = new UserController();
         $this->view = new View();
     }
 
@@ -21,6 +24,7 @@ class IndexController
 
     function home()
     {
-        $this->view->ShowHome();
+        $logged = $this->userController->getAccess();
+        $this->view->ShowHome($logged);
     }
 }

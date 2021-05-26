@@ -39,13 +39,17 @@ class UserController{
        $user = $_POST['user'];
        $pass = $_POST['pass']; 
        $username = $this->model->getPassword($user);
-       if(!empty($user) && !empty($pass)&& !(empty($username))){    
-            if(password_verify($pass, $username->pass)){
+       if(!empty($user) && !empty($pass)&& !(empty($username))){ 
+           
+            $temp = md5($pass); 
+
+            //if(password_verify($temp, $username->pass)){
+              if($temp == $username->pass){
                 session_start();
-                $_SESSION['ID_USER'] = $username->id_user;
-                $_SESSION['USERNAME'] = $username->user;
+                $_SESSION['ID_USER'] = $username->id;
+                $_SESSION['USERNAME'] = $username->usuario;
                 $_SESSION['LAST_ACTIVITY'] = time();
-                $this->view->ShowHomeLogged();
+                $this->view->ShowHomeLocation();
             }else
                 $this->view->ShowErrorPass();
         }else

@@ -6,12 +6,13 @@ require_once "controller/MaterialController.php";
 require_once 'RouterClass.php';
 
 // CONSTANTES PARA RUTEO
+define("LOGOUT", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/logout');
 define("BASE_URL", 'http://' . $_SERVER["SERVER_NAME"] . ':' . $_SERVER["SERVER_PORT"] . dirname($_SERVER["PHP_SELF"]) . '/');
 //esto lo agrego para comparar
 $r = new Router();
 
 // rutas
-
+$r->addRoute("logout", "GET", "UserController", "Logout");
 
 $r->addRoute("agregarpedido", "POST", "PedidoController", "formPedido");
 $r->addRoute("pedidos", "GET", "PedidoController", "formPedido");

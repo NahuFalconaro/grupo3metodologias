@@ -7,8 +7,9 @@ class View{
     function __construct(){
     }
 
-    function ShowHome(){
+    function ShowHome($logged){
         $smarty = new Smarty();
+        $smarty->assign('Logged', $logged);
         $smarty->assign('Titulo', 'Grupo 3 Metodologias');
         $smarty->display('templates/index.tpl');
     }

@@ -26,6 +26,7 @@
                 </tbody>
             </table>
             <!--si esta log la secretaria-->
+            {if $Logged == 1}
                 <div class="col-7 form">
                     <h3>Agregar Material</h3>
                     <form class=" row " enctype=" multipart/form-data" action="insertMaterial" method="post">
@@ -53,6 +54,7 @@
                         </div>
                     </form>
                 </div>
+            {/if}
             <!---->
         </div>
     </div>
