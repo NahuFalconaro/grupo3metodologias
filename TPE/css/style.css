@@ -99,7 +99,9 @@ a{
 .banner__text h3{
     font-size: 1.7em;
 }
-
+.banner__text .pagina{
+    margin-top: 5% !important;
+}
 .d-none{
     display: none;
 }

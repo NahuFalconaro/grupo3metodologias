@@ -31,12 +31,7 @@
             </ul>
         </div>
     </header>
-    <div class="banner">
-        <div class="banner__text">
-            <h3>Servicio Metodologia Grupo 3</h3>
-            <p id='pagina'>Trabaja con Nosotros</p>
-        </div>
-    </div>
+
     {if $Logged == 0}
     <div class='d-none popup'>
         <form action="verifyUser" method="POST" class="form-inline">

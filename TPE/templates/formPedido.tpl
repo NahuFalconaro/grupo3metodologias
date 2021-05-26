@@ -1,4 +1,10 @@
 {include file="header.tpl"}
+<div class="banner">
+        <div class="banner__text">
+            <h3>Servicio Metodologia Grupo 3</h3>
+            <p id='pagina' class="pagina">Contacta nuestros servicios</p>
+        </div>
+    </div>
 <div class="contains-fluid contactanos">
     <div class="form">
         <div class="row">

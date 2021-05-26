@@ -3,7 +3,12 @@
 <div class="edit_popup hidden">
     {include file="updateMaterial.tpl"}
 </div>
-
+<div class="banner">
+        <div class="banner__text">
+            <h3>Servicio Metodologia Grupo 3</h3>
+            <p id='pagina' class="pagina">Cartelera informativa</p>
+        </div>
+    </div>
 <div class="contains-fluid materiales">
     <div class="tabla-materiales form">
         <div class="row">
