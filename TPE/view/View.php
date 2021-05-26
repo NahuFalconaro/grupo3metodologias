@@ -34,8 +34,9 @@ class View{
         $smarty->display('templates/ShowErrorEmptyFields.tpl');
     }
 
-    function Form(){
+    function Form($logged){
         $smarty = new Smarty();
+        $smarty->assign('Logged', $logged);
         $smarty->display('templates/formPedido.tpl');
     }
 

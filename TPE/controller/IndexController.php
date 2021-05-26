@@ -19,7 +19,8 @@ class IndexController
 
     function formPedido()
     {
-        $this->view->Form();
+        $logged = $this->userController->getAccess();
+        $this->view->Form($logged);
     }
 
     function home()
