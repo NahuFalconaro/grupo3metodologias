@@ -1,4 +1,4 @@
-{include file="index.tpl"}
+{include file="header.tpl"}
 <div class="contains-fluid contactanos">
     <div class="form">
         <div class="row">

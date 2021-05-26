@@ -1,4 +1,4 @@
-{include file="index.tpl"}
+{include file="header.tpl"}
 
 <div class="edit_popup hidden">
 {include file="updateMaterial.tpl"}

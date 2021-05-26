@@ -1,28 +1,28 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-05-26 03:29:46
+/* Smarty version 3.1.34-dev-7, created on 2021-05-26 18:48:18
   from 'C:\xampp1\htdocs\grupo3metodologias\TPE\templates\formPedido.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60ada48ac60262_82842109',
+  'unifunc' => 'content_60ae7bd2c833c2_95398506',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '991de592a3f41a8718ab69d89bb6af587790c810' => 
     array (
       0 => 'C:\\xampp1\\htdocs\\grupo3metodologias\\TPE\\templates\\formPedido.tpl',
-      1 => 1621985636,
+      1 => 1622047668,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:index.tpl' => 1,
+    'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_60ada48ac60262_82842109 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:index.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_60ae7bd2c833c2_95398506 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="contains-fluid contactanos">
     <div class="form">
