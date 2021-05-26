@@ -158,14 +158,18 @@ a{
 }
 
 .shown{
-    background-color: coral;
+    background-color: #a7e090;
     display: block;
     opacity: 100%;
     width: 100%;
+    border: green 2px solid;
 }
 
 .edit_popup{
     position: absolute;
-    top: 0;
-    height: 100%;
+    left: auto;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 25%;
+    max-width: 500px;
 }

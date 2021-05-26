@@ -21,8 +21,10 @@
                             <td>{$material->nombre}</td>
                             <td id="{$material->aceptado}">{if $material->aceptado == 1} SI {else} NO {/if}</td>
                             <td>{$material->descripcion}</td>
-                            <td><button class="edit_btn" id="{$material->id_materiales}">Editar</button> </td>
-                            <td><a href=" deleteMaterial/{$material->id_materiales}" id="deleteMaterial">Borrar</a>
+                            {if $Logged == 1}
+                                <td><button class="edit_btn btn btn-link" id="{$material->id_materiales}">Editar</button> </td>
+                                <td><a href=" deleteMaterial/{$material->id_materiales}" id="deleteMaterial">Borrar</a>
+                            {/if}
                             </td>
                         </tr>
                     {/foreach}
@@ -30,7 +32,7 @@
             </table>
             <!--si esta log la secretaria-->
             {if $Logged == 1}
-                <div class="col-7 form">
+                <div class="col-7 form form-add-material">
                     <h3>Agregar Material</h3>
                     <form class=" row " enctype=" multipart/form-data" action="insertMaterial" method="post">
                         <input type="hidden" id="" name="id_materiales">
