@@ -14,25 +14,12 @@ class View{
         $smarty->display('templates/home.tpl');
     }
 
+    //popup del login
     function ShowLogin(){
         $smarty = new Smarty();
         $smarty->display('templates/ShowLogin.tpl');
     }
 
-    function ShowHomeLogged(){
-        $smarty = new Smarty();
-        $smarty->display('templates/ShowHomeLogged.tpl');
-    }
-
-    function ShowErrorPass(){
-        $smarty = new Smarty();
-        $smarty->display('templates/ShowErrorPass.tpl');
-    }
-
-    function ShowErrorEmptyFields(){
-        $smarty = new Smarty();
-        $smarty->display('templates/ShowErrorEmptyFields.tpl');
-    }
 
     //Muestra el formulario de contacto
     function Form($logged){
@@ -52,6 +39,7 @@ class View{
         $smarty->display('templates/showErrorMaterial.tpl');
     }
 
+    //popup del update
     function showUpdateMaterial($Material){
         $smarty = new Smarty();
         $smarty->assign('Materiales', $Material);
