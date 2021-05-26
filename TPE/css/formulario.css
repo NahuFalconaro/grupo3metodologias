@@ -20,3 +20,11 @@
 .form-add-material{
     margin-top: 5% !important;
 }
+.title-tpl{
+    text-align: center;
+    margin-bottom: 5%;
+    color: #35b745;
+}
+.title-tpl h3{
+    font-size: 3em;
+}

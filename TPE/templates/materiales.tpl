@@ -1,12 +1,15 @@
 {include file="header.tpl"}
 
 <div class="edit_popup hidden">
-{include file="updateMaterial.tpl"}
+    {include file="updateMaterial.tpl"}
 </div>
 
 <div class="contains-fluid materiales">
     <div class="tabla-materiales form">
         <div class="row">
+            <div class="title-tpl">
+                <h3>Cartelera informativa de materiales aceptados</h3>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
@@ -24,7 +27,7 @@
                             {if $Logged == 1}
                                 <td><button class="edit_btn btn btn-link" id="{$material->id_materiales}">Editar</button> </td>
                                 <td><a href=" deleteMaterial/{$material->id_materiales}" id="deleteMaterial">Borrar</a>
-                            {/if}
+                                {/if}
                             </td>
                         </tr>
                     {/foreach}
