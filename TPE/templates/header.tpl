@@ -41,7 +41,7 @@
                 <input type="password" class='login__password' name="pass" placeholder='Password'>
                 <p><a href='#'>Olvidaste tu contrasena?</a></p>
                 <button type="submit" class="btn">Iniciar Sesion</button>
-                <button type="button" class="btn">Cancelar</button>
+                <button type="button" id="session_btn_close" class="btn">Cancelar</button>
                 <div class='login__barra'></div>
             </div>
         </form>
