@@ -18,14 +18,10 @@ class PedidoController
         define("BASE_URL", 'http://' . $_SERVER["SERVER_NAME"] . ':' . $_SERVER["SERVER_PORT"] . dirname($_SERVER["PHP_SELF"]) . '/home');
     }
 
-    //$params = lo que te tre el router despues de la "/"
-    //$params = null
-
+    //Comprueba y manda al Model el pedido, luego redirecciona al Home
     function agregarPedido()
     {
-
         $imagen = null;
-
         if (isset($_FILES)) {
 
             if ($_FILES['foto']['type'] == "image/jpg" ||  $_FILES['foto']['type'] == "image/jpeg" || $_FILES['foto']['type'] == "image/png") {
@@ -40,7 +36,6 @@ class PedidoController
                 $imagen["filePath"] = "images/" . uniqid("", true) . "." . strtolower(pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION));
             };
         }
-
         $nombre = $_POST["nombre"];
         $apellido = $_POST["apellido"];
         $ubicacion = $_POST["direccion"];

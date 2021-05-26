@@ -34,6 +34,7 @@ class View{
         $smarty->display('templates/ShowErrorEmptyFields.tpl');
     }
 
+    //Muestra el formulario de contacto
     function Form($logged){
         $smarty = new Smarty();
         $smarty->assign('Logged', $logged);
