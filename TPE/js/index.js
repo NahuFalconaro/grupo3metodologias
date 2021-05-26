@@ -4,7 +4,7 @@ let btnLogin = document.querySelector('.btnLogin');
 let btn_close = document.querySelector("#session_btn_close");
 
 btnLogin.addEventListener('click', () => {
-    display.classList.toggle('d-flex');
+    display.classList.toggle('d-flex');//Toggle cambia el valor de una clase en css
     display.classList.toggle('d-none');
 });
 
