@@ -14,6 +14,8 @@ class UserController{
         $this->model = new UserModel();
     }
 
+    //verifica si el usuario esta logeado y si lo está, se fija si es admin o no
+
     function getAccess(){
         session_start();
         if(isset($_SESSION['ID_USER'])){
@@ -23,11 +25,12 @@ class UserController{
             return 0;
         }
     }
-
+    //muestra la view de login
     function Login(){
         $this->view->ShowLogin();
     }
-
+    
+    //cierra la sesion y redirige a home
     function Logout(){
         session_start();
         session_destroy();
@@ -35,6 +38,7 @@ class UserController{
 
     }
 
+    //verifica que el usuario y contraseña sean correctas
     public function verifyUser(){
        $user = $_POST['user'];
        $pass = $_POST['pass']; 
@@ -51,25 +55,9 @@ class UserController{
                 $_SESSION['LAST_ACTIVITY'] = time();
                 $this->view->ShowHomeLocation();
             }else
-                $this->view->ShowErrorPass();
+                $this->view->ShowHome(0);
         }else
-            $this->view->ShowErrorEmptyFields();
-    }
-
-    private function checkLoggedIn(){
-        session_start();
-        
-        if(!isset($_SESSION["USERNAME"])){
-            header("Location: ". BASE_URL);
-            die();
-        }else{
-            if ( isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 300000)) { 
-                header("Location: ". LOGOUT);
-                die();
-            } 
-        
-            $_SESSION['LAST_ACTIVITY'] = time();
-        }
+            $this->view->ShowHome(0);
     }
 
 }
