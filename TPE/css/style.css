@@ -146,3 +146,30 @@ a{
     color: #fff !important;
     border-radius: 4px;
 }
+
+
+/* _________________________________ */
+
+.hidden {
+    display: none;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.shown{
+    background-color: #a7e090;
+    display: block;
+    opacity: 100%;
+    width: 100%;
+    border: green 2px solid;
+}
+
+.edit_popup{
+    position: absolute;
+    left: auto;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 25%;
+    max-width: 500px;
+}

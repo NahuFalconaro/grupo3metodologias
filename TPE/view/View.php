@@ -11,7 +11,7 @@ class View{
         $smarty = new Smarty();
         $smarty->assign('Logged', $logged);
         $smarty->assign('Titulo', 'Grupo 3 Metodologias');
-        $smarty->display('templates/index.tpl');
+        $smarty->display('templates/home.tpl');
     }
 
     function ShowLogin(){

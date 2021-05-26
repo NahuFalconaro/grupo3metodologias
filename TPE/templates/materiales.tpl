@@ -1,4 +1,9 @@
-{include file="index.tpl"}
+{include file="header.tpl"}
+
+<div class="edit_popup hidden">
+{include file="updateMaterial.tpl"}
+</div>
+
 <div class="contains-fluid materiales">
     <div class="tabla-materiales form">
         <div class="row">
@@ -14,20 +19,20 @@
                     {foreach from=$Materiales item=material}
                         <tr>
                             <td>{$material->nombre}</td>
-                            <td>{if $material->aceptado == 1} SI {else} NO {/if}</td>
+                            <td id="{$material->aceptado}">{if $material->aceptado == 1} SI {else} NO {/if}</td>
                             <td>{$material->descripcion}</td>
-                                <td ><a href="getEditMaterial/{$material->id_materiales}" id="deleteMaterial">Editar</a>
-                                    <!-- onclick="window.open(this.href, 'targetWindow',
-                                'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=SomeSize, height=SomeSize')"-->
-                                </td>
-                                <td><a href="deleteMaterial/{$material->id_materiales}" id="deleteMaterial">Borrar</a> </td>
+                            {if $Logged == 1}
+                                <td><button class="edit_btn btn btn-link" id="{$material->id_materiales}">Editar</button> </td>
+                                <td><a href=" deleteMaterial/{$material->id_materiales}" id="deleteMaterial">Borrar</a>
+                            {/if}
+                            </td>
                         </tr>
                     {/foreach}
                 </tbody>
             </table>
             <!--si esta log la secretaria-->
             {if $Logged == 1}
-                <div class="col-7 form">
+                <div class="col-7 form form-add-material">
                     <h3>Agregar Material</h3>
                     <form class=" row " enctype=" multipart/form-data" action="insertMaterial" method="post">
                         <input type="hidden" id="" name="id_materiales">
@@ -55,7 +60,7 @@
                     </form>
                 </div>
             {/if}
-            <!---->
         </div>
     </div>
 </div>
+<script src="js/popup.js"></script>
