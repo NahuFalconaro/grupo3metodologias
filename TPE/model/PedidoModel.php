@@ -9,7 +9,7 @@ class PedidoModel
         $this->db = new PDO('mysql:host=localhost;' . 'dbname=bd_metodologias;charset=utf8', 'root', '');
     }
 
-    //Formlario Nombre, Apeliido, ubicacion id, foto, clase vehiculo, telefono
+    //Comprueba y agrega a la DB el pedido
     function addPedido($nombre, $apellido, $ubicacion, $telefono, $imagen, $claseVehiculo, $franjaHoraria)
     {
 
