@@ -59,10 +59,9 @@
                 </form>
             </div>
             <div class="col-4 contacto_acopio">
-                <div class="col-6">
+                <div class="col-8">
                     <h4> Telefono </h4>
-                    <span class="fi-phone"></span>
-                    <h5>0800-123-acopio</h5>
+                    <h5> <img src="css/phone.png"> 0800-123-acopio</h5>
                 </div>
                 <div class="col-6">
                     <h4> Direccion </h4>
@@ -72,3 +71,4 @@
         </div>
     </div>
 </div>
+{include file="footer.tpl"}

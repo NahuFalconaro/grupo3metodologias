@@ -21,10 +21,22 @@
     margin-top: 5% !important;
 }
 .title-tpl{
-    text-align: center;
     margin-bottom: 5%;
     color: #35b745;
 }
 .title-tpl h3{
     font-size: 3em;
+}
+.descripcion p{
+    font-size: 1.7em;
+    font-family: system-ui;
+}
+img{
+    width: 35px;
+}
+.align-items-start{
+    background-color:#f0ffff94 !important;
+}
+.footer{
+    margin-top: 2%;
 }

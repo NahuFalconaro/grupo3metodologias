@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2021-05-26 19:52:13
+/* Smarty version 3.1.34-dev-7, created on 2021-05-26 21:06:16
   from 'C:\xampp1\htdocs\grupo3metodologias\TPE\templates\formPedido.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_60ae8acd142c08_50873318',
+  'unifunc' => 'content_60ae9c28c4bcc5_09756510',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '991de592a3f41a8718ab69d89bb6af587790c810' => 
     array (
       0 => 'C:\\xampp1\\htdocs\\grupo3metodologias\\TPE\\templates\\formPedido.tpl',
-      1 => 1622051516,
+      1 => 1622055954,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60ae8acd142c08_50873318 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60ae9c28c4bcc5_09756510 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="banner">
@@ -84,10 +85,9 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                 </form>
             </div>
             <div class="col-4 contacto_acopio">
-                <div class="col-6">
+                <div class="col-8">
                     <h4> Telefono </h4>
-                    <span class="fi-phone"></span>
-                    <h5>0800-123-acopio</h5>
+                    <h5> <img src="css/phone.png"> 0800-123-acopio</h5>
                 </div>
                 <div class="col-6">
                     <h4> Direccion </h4>
@@ -96,5 +96,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
             </div>
         </div>
     </div>
-</div><?php }
+</div>
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
 }

@@ -103,10 +103,14 @@ a{
     font-size: 1.9em;
     color: #4bff04;
 }
+.banner__text h3, .banner__text .pagina, .title-tpl, .descripcion p{
+    text-align: center;
+}
+
 .banner__text .pagina{
     margin-top: 5% !important;
     font-size: 1.3em;
-    text-align: center;
+    
 }
 .d-none{
     display: none;
