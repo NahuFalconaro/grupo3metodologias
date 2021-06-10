@@ -44,6 +44,6 @@ class PedidoController
         $franjaHoraria = $_POST["franja_horaria"];
 
         $this->pedidoModel->addPedido($nombre, $apellido, $ubicacion, $telefono, $imagen, $claseVehiculo, $franjaHoraria);
-        header("Location: " . BASE_URL);
+        header("Location: " . BASE_FORM_PEDIDO);
     }
 }
