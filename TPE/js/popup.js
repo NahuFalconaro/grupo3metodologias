@@ -6,25 +6,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+//Abre y prepara el pop up
 function open_edit_menu() {
-    let id = this.id;
+    let info = transfer_info(this);
 
-    let father_td = this.parentElement;
-    let tr = father_td.parentElement;
-
-
-    let name = tr.childNodes[1].innerHTML;
-    let accepted = tr.childNodes[3].id;
-    let description = tr.childNodes[5].innerHTML;
-
-    document.querySelector("#popup_form").action += id;
-    document.querySelector("#popup_name").value = name;
-    document.querySelector("#popup_accepted").value = accepted;
-    document.querySelector("#popup_description").value = description;
+    document.querySelector("#popup_form").action += info[0];
+    document.querySelector("#popup_name").value = info[1];
+    document.querySelector("#popup_accepted").value = info[2];
+    document.querySelector("#popup_description").value = info[3];
 
     let popup_html = document.querySelector(".edit_popup");
-    popup_html.classList.remove("hidden");
-    popup_html.classList.add("shown");
+    open_popup(popup_html);
 
     let closers = document.querySelectorAll(".popup_close");
 
@@ -36,6 +28,29 @@ function open_edit_menu() {
 
 }
 
+//Transfiere la info de la seccion seleccionada de la tabla al Pop up
+function transfer_info(td) {
+    let info = [];
+
+    info[0] = td.id;
+
+    let father_td = td.parentElement;
+    let tr = father_td.parentElement;
+
+    info[1] = tr.childNodes[1].innerHTML;
+    info[2] = tr.childNodes[3].id;
+    info[3] = tr.childNodes[5].innerHTML;
+
+    return info;
+}
+
+//Abre el pop up
+function open_popup(popup) {
+    popup.classList.add("shown");
+    popup.classList.remove("hidden");
+}
+
+//Cierra el pop up
 function close_popup(popup) {
     popup.classList.remove("shown");
     popup.classList.add("hidden");

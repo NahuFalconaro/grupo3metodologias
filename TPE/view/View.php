@@ -7,6 +7,7 @@ class View{
     function __construct(){
     }
 
+    //muestra el home
     function ShowHome($logged){
         $smarty = new Smarty();
         $smarty->assign('Logged', $logged);
@@ -21,20 +22,22 @@ class View{
     }
 
 
-    //Muestra el formulario de contacto
+    //muestra el formulario de contacto
     function Form($logged){
         $smarty = new Smarty();
         $smarty->assign('Logged', $logged);
         $smarty->display('templates/formPedido.tpl');
     }
 
+    //muestra los materiales
     function ShowMateriales($Materiales, $logged){
         $smarty = new Smarty();
         $smarty->assign('Materiales', $Materiales);
         $smarty->assign('Logged', $logged);
         $smarty->display('templates/materiales.tpl');
     }
-    function showError(){//muestra error al insertar o updatear un material y no existe el material o hay campos vacios
+    //muestra error al insertar o updatear un material y no existe el material o hay campos vacios
+    function showError(){
         $smarty = new Smarty();
         $smarty->display('templates/showErrorMaterial.tpl');
     }
@@ -45,6 +48,8 @@ class View{
         $smarty->assign('Materiales', $Material);
         $smarty->display('templates/updateMaterial.tpl');
     }
+
+    //redirige a materiales
     function ShowHomeLocation(){
         header("Location: ".BASE_URL."materiales");
      }
