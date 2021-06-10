@@ -15,24 +15,24 @@
     <header>
         <div class='header__top'>
             <h1>Servicio Metodologia Grupo 3</h1>
-            {if $Logged == 0}
+            <!--{if $Logged == 3}
             <a href="#" class='btnLogin'>Iniciar Sesion</a>
             {else}
                 <a href="logout" class="btnLogin">logout</a>
-            {/if}
+            {/if}-->
         </div>
         <div class='header__bot'>
             <ul>
                 <li><a href='home'>Inicio</a></li>
                 <li><a href='materiales'>Cartelera</a></li>
                 <li><a href=''>Trabaja Con Nosotros</a></li>
-                <li><a href='formPedido'>Contactanos</a></li>
+                <li><a href='formPedido'>Solicitar servicio</a></li>
                 <li><a href=''>Voluntarios</a></li>
             </ul>
         </div>
     </header>
 
-    {if $Logged == 0}
+    <!--{if $Logged == 3}
     <div class='d-none popup'>
         <form action="verifyUser" method="POST" class="form-inline">
             <div class="login">
@@ -46,7 +46,7 @@
             </div>
         </form>
     </div>
-    {/if}
+    {/if}-->
     <script src="js/index.js"></script>
 </body>
 

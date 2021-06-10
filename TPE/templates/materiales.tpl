@@ -1,5 +1,6 @@
 {include file="header.tpl"}
-
+<!-- Hascer otro template de material, donde uno se pueda editar y este oculto 
+y el otro sea visible para todos y saber q material es aceptado-->
 <div class="edit_popup hidden">
     {include file="updateMaterial.tpl"}
 </div>
@@ -29,17 +30,17 @@
                             <td>{$material->nombre}</td>
                             <td id="{$material->aceptado}">{if $material->aceptado == 1} SI {else} NO {/if}</td>
                             <td>{$material->descripcion}</td>
-                            {if $Logged == 1}
+                            <!--{if $Logged == 0}-->
                                 <td><button class="edit_btn btn btn-link" id="{$material->id_materiales}">Editar</button> </td>
                                 <td><a href=" deleteMaterial/{$material->id_materiales}" id="deleteMaterial">Borrar</a>
-                                {/if}
+                              <!--  {/if}-->
                             </td>
                         </tr>
                     {/foreach}
                 </tbody>
             </table>
             <!--si esta log la secretaria-->
-            {if $Logged == 1}
+            <!--{if $Logged == 0}-->
                 <div class="col-7 form form-add-material">
                     <h3>Agregar Material</h3>
                     <form class=" row " enctype=" multipart/form-data" action="insertMaterial" method="post">
@@ -51,12 +52,12 @@
                             </div>
                             <div class="col-6">
                                 <label class="form-label"> Aceptado 1 Si 0 No: </label>
-                                <input type="number" min="0" max="1" class="form-control" id="" name="aceptado"
+                                <input type="number" min="0" max="0" class="form-control" id="" name="aceptado"
                                     placeholder="Aceptado" required>
                             </div>
                         </div>
                         <div class="row justify-content-start">
-                            <div class="col-12">
+                            <div class="col-02">
                                 <label class="form-label"> Descripcion: </label>
                                 <input type="text" max="200" class="form-control" id="" name="descripcion"
                                     placeholder="Descripcion">
@@ -67,7 +68,7 @@
                         </div>
                     </form>
                 </div>
-            {/if}
+        <!--  {/if}-->
         </div>
     </div>
 </div>

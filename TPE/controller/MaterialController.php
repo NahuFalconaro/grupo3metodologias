@@ -18,8 +18,12 @@
         //y lo pasa para que lo renderice la vista
         function showMateriales($params = null){
             $materiales = $this->modelMaterial->getMateriales(); 
+            $this->view->ShowCarteleraPublica($materiales);
+        }
+        function showMaterialesAdmin($params = null){
+            $materiales = $this->modelMaterial->getMateriales(); 
             $logged = $this->userController->getAccess();   
-            $this->view->showMateriales($materiales, $logged);
+            $this->view->ShowCarteleraAdmin($materiales, $logged);
         }
         //Funcion que inserta un material nuevo a la base de datos, obteniendo los datos desde formulario de la vista
         function insertMaterial(){
@@ -30,7 +34,7 @@
             if(!empty($nombre)){// la descripcion no es necesaria si el material no es aceptado
                 $this->modelMaterial->insertMaterial($nombre, $aceptado, $descripcion);
                 $materiales = $this->modelMaterial->getMateriales();
-                $this->view->ShowHomeLocation(); // arreglar porque tira error
+                $this->view->ShowAdminMateriales(); // arreglar porque tira error
             }else{
                 $this->view->showError();
             }
@@ -39,7 +43,7 @@
         function deleteMaterial($params = null){
             $id = $params[':ID'];
             $this->modelMaterial->deleteMaterial($id);
-            $this->view->ShowHomeLocation();
+            $this->view->ShowAdminMateriales();
         }
         //Funcion que modifica un material de la base de datos
         function updateMaterial($params = null){
@@ -50,7 +54,7 @@
             $descripcion = $_POST['descripcionUpdate'];
                 if(isset($nombre) && isset($aceptado)){
                     $this->modelMaterial->updateMaterial($id_material, $nombre, $aceptado, $descripcion); 
-                    $this->view->ShowHomeLocation();
+                    $this->view->ShowAdminMateriales();
                 }
             }
             //funcion que trae el material para editar y lo muestra en el view

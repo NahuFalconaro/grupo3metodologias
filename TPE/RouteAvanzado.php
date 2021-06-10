@@ -28,6 +28,7 @@ $r->addRoute("formPedido", "GET", "IndexController", "formPedido");
 $r->addRoute("insertMaterial", "POST", "MaterialController", "insertMaterial");
 $r->addRoute("deleteMaterial/:ID", "GET", "MaterialController", "deleteMaterial");
 $r->addRoute("materiales", "GET", "MaterialController", "showMateriales");
+$r->addRoute("adminMaterial", "GET", "MaterialController", "showMaterialesAdmin");
 $r->addRoute("submitForm", "POST", "PedidoController", "agregarPedido");
 $r->addRoute("loginscreen", "GET", "UserController", "Login");
 $r->addRoute("verifyUser", "POST", "UserController", "verifyUser");

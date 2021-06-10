@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2021 a las 20:34:03
--- Versión del servidor: 10.4.13-MariaDB
--- Versión de PHP: 7.4.7
+-- Tiempo de generación: 10-06-2021 a las 21:37:43
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,6 +37,18 @@ CREATE TABLE `materiales` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `material_traido`
+--
+
+CREATE TABLE `material_traido` (
+  `id_material` int(11) NOT NULL,
+  `peso` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `pedido`
 --
 
@@ -48,7 +60,7 @@ CREATE TABLE `pedido` (
   `telefono` int(11) NOT NULL,
   `foto` varchar(100) DEFAULT NULL,
   `clase_vehiculo` char(1) NOT NULL,
-  `franja_horaria` date NOT NULL
+  `franja_horaria` char(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -60,7 +72,7 @@ CREATE TABLE `pedido` (
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `usuario` varchar(20) NOT NULL,
-  `pass` varchar(20) NOT NULL,
+  `pass` varchar(100) NOT NULL,
   `admin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -73,6 +85,12 @@ CREATE TABLE `usuario` (
 --
 ALTER TABLE `materiales`
   ADD PRIMARY KEY (`id_materiales`);
+
+--
+-- Indices de la tabla `material_traido`
+--
+ALTER TABLE `material_traido`
+  ADD KEY `id_material` (`id_material`);
 
 --
 -- Indices de la tabla `pedido`
@@ -94,19 +112,29 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `materiales`
 --
 ALTER TABLE `materiales`
-  MODIFY `id_materiales` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_materiales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `material_traido`
+--
+ALTER TABLE `material_traido`
+  ADD CONSTRAINT `material_traido_ibfk_1` FOREIGN KEY (`id_material`) REFERENCES `materiales` (`id_materiales`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

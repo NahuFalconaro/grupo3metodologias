@@ -29,8 +29,14 @@ class View{
         $smarty->display('templates/formPedido.tpl');
     }
 
-    //muestra los materiales
-    function ShowMateriales($Materiales, $logged){
+    //muestra los materiales al publico sin opcion de edicion
+    function ShowCarteleraPublica($Materiales){
+        $smarty = new Smarty();
+        $smarty->assign('Materiales', $Materiales);
+        $smarty->display('templates/carteleraPublica.tpl');
+    }
+    //muestra los materiales al admin con opcion de edicion
+    function ShowCarteleraAdmin($Materiales, $logged){
         $smarty = new Smarty();
         $smarty->assign('Materiales', $Materiales);
         $smarty->assign('Logged', $logged);
@@ -51,7 +57,10 @@ class View{
 
     //redirige a materiales
     function ShowHomeLocation(){
-        header("Location: ".BASE_URL."materiales");
+        header("Location: ".BASE_URL."carteleraPublica");
+     }
+     function ShowAdminMateriales(){
+        header("Location: ".BASE_URL."adminMaterial");
      }
 
 }

@@ -2,14 +2,14 @@
 <div class="banner">
         <div class="banner__text">
             <h3>Servicio Metodologia Grupo 3</h3>
-            <p id='pagina' class="pagina">Contacta nuestros servicios</p>
+            <p id='pagina' class="pagina">Solicita que pasemos a retirar tus residuos</p>
         </div>
     </div>
 <div class="contains-fluid contactanos">
     <div class="form">
         <div class="row">
             <div class="title-tpl">
-                <h3>Contacta nuestros servicios</h3>
+                <h3>Solicita que pasemos a retirar tus residuos</h3>
             </div>
             <div class="col-7">
                 <form class="row " enctype="multipart/form-data" action="submitForm" method="post">
