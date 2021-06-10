@@ -29,9 +29,13 @@
                                 required>
                         </div>
                         <div class="col-6">
-                            <input type="time" class="form-control" id="" name="franja_horaria"
-                                placeholder="Franja horaria" required>
-                        </div>
+                        <select name="franja_horaria" id="" class="form-select" required>
+                            <option value="a"> 08:00hs a 13:00hs </option>
+                            <!--creo que es asi el value-->
+                            <option value="b"> 15:00hs a 18:00hs </option>
+                        </select>
+                    </div>
+
                     </div>
                     <div class="row justify-content-start ">
                         <div class="col-6">
