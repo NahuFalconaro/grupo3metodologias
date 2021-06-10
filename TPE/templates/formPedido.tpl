@@ -30,9 +30,9 @@
                         </div>
                         <div class="col-6">
                         <select name="franja_horaria" id="" class="form-select" required>
-                            <option value="a"> 08:00hs a 13:00hs </option>
+                            <option value="08:00hs a 13:00hs"> 08:00hs a 13:00hs </option>
                             <!--creo que es asi el value-->
-                            <option value="b"> 15:00hs a 18:00hs </option>
+                            <option value="15:00hs a 18:00hs"> 15:00hs a 18:00hs </option>
                         </select>
                     </div>
 
