@@ -64,6 +64,9 @@
             $this->view->showUpdateMaterial($Material);
         }
 
+        function getBalanza(){
+            $this->view->showBalanza();
+        }
 
 
     }

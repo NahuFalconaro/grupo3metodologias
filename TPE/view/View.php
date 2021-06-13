@@ -63,6 +63,10 @@ class View{
         header("Location: ".BASE_URL."adminMaterial");
      }
 
+     function showBalanza(){
+        $smarty = new Smarty();
+        $smarty->display('templates/balanza.tpl');
+     }
 }
 
 

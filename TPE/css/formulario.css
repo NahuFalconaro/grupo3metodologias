@@ -43,3 +43,9 @@ img{
 tr{
     text-align: center;
 }
+.form-label{
+    margin-bottom: .1rem !important;
+}
+.col-balanza{
+    margin-top: 1em !important;
+}
