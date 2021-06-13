@@ -34,7 +34,7 @@ class View
     }
 
     //muesta el formulario de la balanza
-    funtion showBalanza(){
+    function showBalanza(){
         $smarty = new Smarty();
         $smarty->display('templates/balanza.tpl');
     }
