@@ -37,7 +37,7 @@ $r->addRoute("logout", "GET", "UserController", "Logout");
 $r->addRoute("getEditMaterial/:ID", "GET", "MaterialController", "getEditMaterial");
 $r->addRoute("updateMaterial/:ID", "POST", "MaterialController", "updateMaterial");
 //Rutas de ejemplo 
-$r->addRoute("getBalanza", "GET", "MaterialController", "getBalanza");
+$r->addRoute("balanza", "GET", "MaterialController", "getBalanza");
 
 // $r->addRoute("about", "GET", "GalleryController", "About");
 // $r->addRoute("contact", "GET", "GalleryController", "Contact");
