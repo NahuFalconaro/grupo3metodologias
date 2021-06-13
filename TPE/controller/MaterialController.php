@@ -65,7 +65,8 @@
         }
 
         function getBalanza(){
-            $this->view->showBalanza();
+            $Materiales = $this->modelMaterial->getMaterialesAceptados();
+            $this->view->showBalanza($Materiales);
         }
 
 
