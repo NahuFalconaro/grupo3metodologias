@@ -52,8 +52,7 @@ y el otro sea visible para todos y saber q material es aceptado-->
                             </div>
                             <div class="col-6">
                                 <label class="form-label"> Aceptado 1 Si 0 No: </label>
-                                <input type="number" min="0" max="0" class="form-control" id="" name="aceptado"
-                                    placeholder="Aceptado" required>
+                                <input type="number" min="0" max="1" class="form-control" id="" name="aceptado" placeholder="Aceptado" required>
                             </div>
                         </div>
                         <div class="row justify-content-start">
