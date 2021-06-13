@@ -23,6 +23,10 @@ $r->addRoute("pedidos", "GET", "PedidoController", "formPedido");
 //Ejemplo:
 // addRoute("palabra en URL", "Método", "Controlador encargado", "Nombre de funcion")
 
+//debug route
+$r->addRoute("recorridos", "GET", "PedidoController", "verPedidos");
+
+
 $r->addRoute("home", "GET", "IndexController", "home");
 $r->addRoute("formPedido", "GET", "IndexController", "formPedido");
 $r->addRoute("insertMaterial", "POST", "MaterialController", "insertMaterial");
@@ -36,8 +40,11 @@ $r->addRoute("logout", "GET", "UserController", "Logout");
 
 $r->addRoute("getEditMaterial/:ID", "GET", "MaterialController", "getEditMaterial");
 $r->addRoute("updateMaterial/:ID", "POST", "MaterialController", "updateMaterial");
-//Rutas de ejemplo 
+
+//balanza
 $r->addRoute("balanza", "GET", "MaterialController", "getBalanza");
+$r->addRoute("insertBalanza", "POST", "MaterialController", "agregarPesoMaterial");
+//Rutas de ejemplo 
 
 // $r->addRoute("about", "GET", "GalleryController", "About");
 // $r->addRoute("contact", "GET", "GalleryController", "Contact");
