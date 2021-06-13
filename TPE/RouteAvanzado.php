@@ -23,6 +23,10 @@ $r->addRoute("pedidos", "GET", "PedidoController", "formPedido");
 //Ejemplo:
 // addRoute("palabra en URL", "Método", "Controlador encargado", "Nombre de funcion")
 
+//debug route
+$r->addRoute("recorridos", "GET", "PedidoController", "verPedidos");
+
+
 $r->addRoute("home", "GET", "IndexController", "home");
 $r->addRoute("formPedido", "GET", "IndexController", "formPedido");
 $r->addRoute("insertMaterial", "POST", "MaterialController", "insertMaterial");

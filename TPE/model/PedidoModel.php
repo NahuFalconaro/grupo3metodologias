@@ -24,4 +24,12 @@ class PedidoModel
         $sentencia = $this->db->prepare("INSERT INTO pedido(nombre, apellido, ubicacion, telefono, foto, clase_vehiculo ,franja_horaria) VALUES(?,?,?,?,?,?,?)");
         $sentencia->execute(array($nombre, $apellido, $ubicacion, $telefono, $imagen, $claseVehiculo, $franjaHoraria));
     }
+
+    //Pide todos los pedidos
+    function getAllPedidos(){
+        $sentencia = $this->db->prepare("SELECT * FROM pedido");
+        $sentencia->execute();
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
+    }
+
 }

@@ -2,6 +2,8 @@
 
 require_once "./model/PedidoModel.php";
 require_once "./view/View.php";
+require_once  "view/View.php";
+
 
 class PedidoController
 {
@@ -9,13 +11,15 @@ class PedidoController
 
     private $pedidoModel;
     private $view;
+    private $userController;
 
 
     function __construct()
     {
         $this->pedidoModel = new PedidoModel();
         $this->view = new View();
-        define("BASE_URL", 'http://' . $_SERVER["SERVER_NAME"] . ':' . $_SERVER["SERVER_PORT"] . dirname($_SERVER["PHP_SELF"]) . '/home');
+        $this->userController = new UserController();
+        //define("BASE_URL", 'http://' . $_SERVER["SERVER_NAME"] . ':' . $_SERVER["SERVER_PORT"] . dirname($_SERVER["PHP_SELF"]) . '/home');
     }
 
     //Comprueba y manda al Model el pedido, luego redirecciona al Home
@@ -45,5 +49,15 @@ class PedidoController
 
         $this->pedidoModel->addPedido($nombre, $apellido, $ubicacion, $telefono, $imagen, $claseVehiculo, $franjaHoraria);
         header("Location: " . BASE_FORM_PEDIDO);
+    }
+
+
+
+    //Pide todos los pedidos al Model y los muestra en el Front
+    function verPedidos()
+    {
+        $logged = $this->userController->getAccess();
+        $pedidos = $this->pedidoModel->getAllPedidos();
+        $this->view->showRecorridos($pedidos);
     }
 }
