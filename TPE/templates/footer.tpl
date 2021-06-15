@@ -12,3 +12,8 @@
         </div>
     </div>
 </div>
+<script src="js/index.js"></script>
+<script src="js/materialTraido.js"></script>
+</body>
+
+</html>

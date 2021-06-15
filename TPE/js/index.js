@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 let display = document.querySelector('.popup');
 let btnLogin = document.querySelector('.btnLogin');
 let btn_close = document.querySelector("#session_btn_close");

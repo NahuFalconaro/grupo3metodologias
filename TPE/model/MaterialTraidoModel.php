@@ -24,12 +24,13 @@
         $sentencia->execute(array($id_material));
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
-    function getMaterialesTotales(){
-        $sentencia = $this->db->prepare("SELECT m.nombre, SUM(mt.peso) AS 'Peso Total'
-                                        FROM material_traido mt
-                                        JOIN materiales m ON (m.id_materiales = mt.id_materiales)
-                                        GROUP BY mt.id_materiales");
-        $sentencia->execute();   
-        return $sentencia->fetchAll(PDO::FETCH_OBJ);                        
-    }
+    //function getMaterialesTotales(){
+        //$sentencia = $this->db->prepare("
+            //            SELECT m.nombre, SUM(mt.peso) AS 'Peso Total'
+            //                            FROM material_traido mt
+            //                            JOIN materiales m ON (m.id_materiales = mt.id_materiales)
+            //                           GROUP BY mt.id_materiales");
+        //$sentencia->execute();   
+      //  return $sentencia->fetchAll(PDO::FETCH_OBJ);                        
+    //}
 }

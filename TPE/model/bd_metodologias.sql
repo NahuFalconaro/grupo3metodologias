@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2021 a las 16:24:18
+-- Tiempo de generación: 15-06-2021 a las 19:09:16
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -39,7 +39,9 @@ CREATE TABLE `materiales` (
 --
 
 INSERT INTO `materiales` (`id_materiales`, `nombre`, `aceptado`, `descripcion`) VALUES
-(14, 'Vidrio', 1, 'No traerlo roto y entregarlo bien envuelto');
+(14, 'Vidrio', 1, 'No traerlo roto y entregarlo bien envuelto'),
+(15, 'Bronce', 1, 'Descripcion'),
+(16, 'Plata', 1, 'Descripcion de plata');
 
 -- --------------------------------------------------------
 
@@ -48,7 +50,7 @@ INSERT INTO `materiales` (`id_materiales`, `nombre`, `aceptado`, `descripcion`) 
 --
 
 CREATE TABLE `material_traido` (
-  `id_material` int(11) NOT NULL,
+  `id_materiales` int(11) NOT NULL,
   `peso` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -57,8 +59,9 @@ CREATE TABLE `material_traido` (
 -- Volcado de datos para la tabla `material_traido`
 --
 
-INSERT INTO `material_traido` (`id_material`, `peso`, `id_usuario`) VALUES
-(14, 30, 5);
+INSERT INTO `material_traido` (`id_materiales`, `peso`, `id_usuario`) VALUES
+(14, 300, 0),
+(15, 100, 0);
 
 -- --------------------------------------------------------
 
@@ -112,9 +115,7 @@ ALTER TABLE `materiales`
 -- Indices de la tabla `material_traido`
 --
 ALTER TABLE `material_traido`
-  ADD PRIMARY KEY (`id_usuario`,`id_material`),
-  ADD KEY `id_material` (`id_material`),
-  ADD KEY `id_usuario` (`id_usuario`);
+  ADD KEY `fk_materiales_traidos` (`id_materiales`);
 
 --
 -- Indices de la tabla `pedido`
@@ -136,7 +137,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `materiales`
 --
 ALTER TABLE `materiales`
-  MODIFY `id_materiales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_materiales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
@@ -158,8 +159,7 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `material_traido`
 --
 ALTER TABLE `material_traido`
-  ADD CONSTRAINT `material_traido_ibfk_1` FOREIGN KEY (`id_material`) REFERENCES `materiales` (`id_materiales`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `material_traido_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_materiales_traidos` FOREIGN KEY (`id_materiales`) REFERENCES `materiales` (`id_materiales`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

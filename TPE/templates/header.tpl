@@ -47,8 +47,3 @@
         </form>
     </div>
     {/if}-->
-    <script src="js/index.js"></script>
-    <script src="js/materialesTraidos.js"></script>
-</body>
-
-</html>
