@@ -3,7 +3,7 @@
     require_once  "UserController.php";
     require_once  "view/View.php";
 
-    class MaterialController
+    class MaterialTraidoController
     {
         private $modelMaterialTraido;
         private $view;
@@ -22,12 +22,20 @@
             if(!empty($id_material) && !empty($peso)){// la descripcion no es necesaria si el material no es aceptado
                 if(!empty($id_usuario)){
                     $this->modelMaterialTraido->insertMaterialTraido($id_material, $peso, $id_usuario);
+            $material = $this->modelMaterial->getMaterialesTotales();
+            if(!empty($material)){// la descripcion no es necesaria si el material no es aceptado
+                if($material->aceptado = '1'){
+                    if(!empty($id_usuario)){
+                        $this->modelMatmodelMaterialTraidoerial->insertMaterialTraido($id_material, $peso, $id_usuario);
+                    }else{
+                        $pesoVecino = $this->modelMaterialTraido->getPesoVecinoBuenaOnda();
+                        $this->modelMaterialTraido->insertMaterialTraido($id_material, $peso + $pesoVecino, 2);//2 siendo el usuario de vecino buena onda
+                    }
+                    $materiales = $this->modelMaterialTraido->getMaterialesTotales();
+                    $this->view->showBalanza($materiales);
                 }else{
-                    $pesoVecino = $this->modelMaterialTraido->getPesoVecinoBuenaOnda();
-                    $this->modelMaterialTraido->insertMaterialTraido($id_material, $peso + $pesoVecino, 2);//2 siendo el usuario de vecino buena onda
+                    $this->view->showError();
                 }
-                $materiales = $this->modelMaterialTraido->getMaterialesTotales();
-                $this->view->showBalanza($materiales);
             }else{
                 $this->view->showError();
             }
