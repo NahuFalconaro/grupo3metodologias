@@ -16,7 +16,7 @@
         }
 
         function getBalanza(){
-            $Materiales = $this->modelMaterialTraido->getMaterialesAceptados();
+            $Materiales = $this->modelMaterialTraido->getMaterialesTotales();
             $this->view->showBalanza($Materiales);
         }
 
@@ -43,9 +43,5 @@
                 $this->view->showError();
             }
         }
-    //Solicita cada material con su peso total y lo pasa a la view
-    function getMaterialesTotales(){
-        $materiales=$this->$modelMaterialTraido->getMaterialesTotales();
-        $this->view->showBalanza($materiales);
-    }
+
 }

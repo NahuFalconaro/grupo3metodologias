@@ -22,10 +22,10 @@
     }
 
     function getMaterialesTotales(){
-        $sentencia = $this->db->prepare("SELECT mt.nombre, SUM(mt.peso) AS 'Peso Total'
-                                        FROM material_traido
+        $sentencia = $this->db->prepare("SELECT m.nombre, SUM(mt.peso) AS 'Peso Total'
+                                        FROM material_traido mt
                                         JOIN materiales m ON (m.id_materiales = mt.id_material)
-                                        GROUP BY mt.nombre");
+                                        GROUP BY mt.id_material");
         $sentencia->execute();   
         return $sentencia->fetchAll(PDO::FETCH_OBJ);                        
     }
