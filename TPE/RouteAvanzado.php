@@ -4,6 +4,7 @@ require_once 'controller/PedidoController.php';
 require_once "controller/IndexController.php";
 require_once "controller/MaterialController.php";
 require_once "controller/MaterialTraidoController.php";
+require_once 'controller/Controller.php';
 require_once 'RouterClass.php';
 
 // CONSTANTES PARA RUTEO

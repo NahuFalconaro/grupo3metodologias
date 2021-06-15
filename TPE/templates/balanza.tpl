@@ -31,9 +31,9 @@
                     <label for="formGroupExampleInput" class="form-label" >Peso del material:</label>
                     <input type="number" id="peso" class="form-control"  min="0" name="pesoTraido" placeholder="Kg">
                 </div>
-                <div class="col-8 col-balanza">
+                <div id="div_cartonero" class="col-8 col-balanza hidden">
                     <label for="formGroupExampleInput" class="form-label">Id Cartonero:</label>
-                    <input type="number" id="id_cartonero" class="form-control" min="0" name="id_usuario" placeholder="IdCartonero">
+                    <input type="number" id="id_cartonero" class="form-control" min="1" name="id_usuario" placeholder="IdCartonero">
                 </div>
                 <div class="d-grid gap-2 col-2">
                     <button class="btn btn-primary" type="submit"> Enviar</button>
@@ -42,5 +42,6 @@
         </div>
     </div>
 </div>
+<script src="js/materialTraido.js"></script>
 {include file="footer.tpl"}
 

@@ -1,13 +1,9 @@
 <?php
-class PedidoModel
+    require_once 'Model.php';
+   
+class PedidoModel  extends Model
 {
 
-    private $db;
-
-    function __construct()
-    {
-        $this->db = new PDO('mysql:host=localhost;' . 'dbname=bd_metodologias;charset=utf8', 'root', '');
-    }
 
     //Comprueba y agrega a la DB el pedido
     function addPedido($nombre, $apellido, $ubicacion, $telefono, $imagen, $claseVehiculo, $franjaHoraria)

@@ -12,8 +12,8 @@ const inputPeso = document.getElementById('peso');
 //"si el valor es menor que el mínimo especificado por el atributo min".
 
 const check = () => {
-  if (!inputCartonero.validity.valid) inputCartonero.value = 0;     //estos dos if, hacen lo mismo.
-  //if (inputCartonero.value < 0) inputCartonero.value = 0;
+  if (!inputCartonero.validity.valid) inputCartonero.value = 1;     //estos dos if, hacen lo mismo. el de validity necesita tener el min
+  //if (inputCartonero.value < 0) inputCartonero.value = 0;      No necesita tener min en input html
 };
 
 inputCartonero.addEventListener('input', check);
@@ -32,3 +32,19 @@ inputPeso.addEventListener('blur', checkPeso);
 //The onblur event occurs when an object loses focus
 //The onblur event is most often used with form validation code (e.g. when the user leaves a form field).
 //The onblur event is similar to the onfocusout event. The main difference is that the onblur event does not bubble
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  let selectUsuario = document.getElementById('rol');
+selectUsuario.addEventListener("click", () => {
+  let div_Cartonero = document.querySelector('#div_cartonero');
+  console.log(div_Cartonero);
+  if(selectUsuario.value == 0){
+    div_Cartonero.classList.add("hidden");
+    div_Cartonero.classList.remove("shown");
+  }else{
+    div_Cartonero.classList.add("shown")
+    div_Cartonero.classList.remove("hidden");
+  }
+  });
+});

@@ -28,7 +28,7 @@ y el otro sea visible para todos y saber q material es aceptado-->
                     {foreach from=$Materiales item=material}
                         <tr>
                             <td>{$material->nombre}</td>
-                            <td id="{$material->aceptado}">{if $material->aceptado == 0} SI {else} NO {/if}</td>
+                            <td id="{$material->aceptado}">{if $material->aceptado == 1} SI {else} NO {/if}</td>
                             <td>{$material->descripcion}</td>
                             </td>
                         </tr>

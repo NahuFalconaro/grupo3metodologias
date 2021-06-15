@@ -2,19 +2,17 @@
 
 require_once "model/PedidoModel.php";   
 require_once "UserController.php";
-require_once "view/View.php";
-
-class IndexController
+require_once  "Controller.php";
+class IndexController  extends Controller
 {
 
-    private $view;
     private $userController;
 
 
     function __construct()
     {   
-        $this->userController = new UserController();
         $this->view = new View();
+        $this->userController = new UserController();
     }
 
     //se fija si esta logeado y llama a la view del formulario de contactanos

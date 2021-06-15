@@ -1,20 +1,19 @@
 <?php
 
 require_once "./model/PedidoModel.php";
-require_once "./view/View.php";
+require_once  "Controller.php";
 
-class PedidoController
+class PedidoController  extends Controller
 {
 
 
     private $pedidoModel;
-    private $view;
 
 
     function __construct()
     {
-        $this->pedidoModel = new PedidoModel();
         $this->view = new View();
+        $this->pedidoModel = new PedidoModel();
     }
 
     //Comprueba y manda al Model el pedido, luego redirecciona al Home

@@ -1,17 +1,16 @@
 <?php
 
 require_once "model/UserModel.php";
-require_once "view/View.php";
+require_once  "Controller.php";
 
-class UserController{
+class UserController  extends Controller{
 
-    private $view;
-    private $model;
+
     private $modelUser;
 
     function __construct(){
         $this->view = new View();
-        $this->model = new UserModel();
+        $this->modelUser = new UserModel();
     }
 
     //verifica si el usuario esta logeado y si lo está, se fija si es admin o no

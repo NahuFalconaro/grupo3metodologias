@@ -1,24 +1,24 @@
 <?php
+
     require_once  "model/MaterialModel.php";
     require_once  "UserController.php";
-    require_once  "view/View.php";
+    require_once  "Controller.php";
 
-    class MaterialController
-    {
+    class MaterialController extends Controller{
+        
         private $modelMaterial;
-        private $view;
         private $userController;
 
         function __construct(){
-            $this->modelMaterial = new MaterialModel();
             $this->view = new View();
-            $this->userController = new UserController();
+            $this->modelMaterial = new MaterialModel();
+            $this->userController = new UserController();  
         }
         //Funcion la cual obtiene los materiales de la base de datos, consulta por el estado de acceso del usuario
         //y lo pasa para que lo renderice la vista
         function showMateriales($params = null){
             $materiales = $this->modelMaterial->getMateriales(); 
-            $this->view->ShowCarteleraPublica($materiales);
+            $this->view->ShowCarteleraPublica($materiales);          
         }
         function showMaterialesAdmin($params = null){
             $materiales = $this->modelMaterial->getMateriales(); 

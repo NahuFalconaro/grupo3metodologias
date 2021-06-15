@@ -1,14 +1,8 @@
 <?php
-
-    class MaterialTraidoModel 
+    require_once 'Model.php';
+   
+    class MaterialTraidoModel extends Model
     {
-
-    private $db;
-
-    function __construct()
-    {
-        $this->db = new PDO('mysql:host=localhost;' . 'dbname=bd_metodologias;charset=utf8', 'root', '');
-    }
 
     function insertMaterialTraido($id_material, $peso, $id_usuario){
     $query = $this->db->prepare("INSERT INTO material_traido(id_materiales, peso, id_usuario) VALUES(?,?,?)");
