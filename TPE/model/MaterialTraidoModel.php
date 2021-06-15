@@ -1,6 +1,6 @@
 <?php
 
-    class MaterialModel 
+    class MaterialTraidoModel 
     {
 
     private $db;

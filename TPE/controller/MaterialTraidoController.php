@@ -3,7 +3,7 @@
     require_once  "UserController.php";
     require_once  "view/View.php";
 
-    class MaterialController
+    class MaterialTraidoController
     {
         private $modelMaterialTraido;
         private $view;
