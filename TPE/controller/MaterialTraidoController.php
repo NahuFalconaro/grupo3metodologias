@@ -25,9 +25,6 @@
             $id_material = $_POST['id_materialTraido'];
             $peso = $_POST['pesoTraido'];
             $id_usuario = $_POST['id_usuario'];
-            if(!empty($id_material) && !empty($peso)){// la descripcion no es necesaria si el material no es aceptado
-                if(!empty($id_usuario)){
-                    $this->modelMaterialTraido->insertMaterialTraido($id_material, $peso, $id_usuario);
             $material = $this->modelMaterial->getMaterialesTotales();
             if(!empty($material)){// la descripcion no es necesaria si el material no es aceptado
                 if($material->aceptado = '1'){
@@ -46,10 +43,9 @@
                 $this->view->showError();
             }
         }
-    }
-
     //Solicita cada material con su peso total y lo pasa a la view
-    class getMaterialesTotales(){
+    function getMaterialesTotales(){
         $materiales=$this->$modelMaterialTraido->getMaterialesTotales();
         $this->view->showBalanza($materiales);
     }
+}
