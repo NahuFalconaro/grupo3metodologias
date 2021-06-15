@@ -21,19 +21,19 @@
                 </div>
                 <div class="col-8 col-balanza">
                     <label for="formGroupExampleInput" class="form-label">Seleccionar material:</label>
-                    <select name="rol" id="" class="form-select">
+                    <select name="id_materialTraido" id="" class="form-select">
                         {foreach from=$Materiales item=Material}
-                            <option value="{$Material->id_materiales}">{$Material->nombre}</option>
+                            <option value="{$Material->id_materiales}" >{$Material->nombre}</option>
                         {/foreach}
                     </select>
                 </div>
                 <div class="col-8 col-balanza">
-                    <label for="formGroupExampleInput" class="form-label">Peso del material:</label>
-                    <input type="number" class="form-control" placeholder="Kg">
+                    <label for="formGroupExampleInput" class="form-label" min='0' pattern="^[0-9]+">Peso del material:</label>
+                    <input type="number" class="form-control" name="pesoTraido" placeholder="Kg">
                 </div>
                 <div class="col-8 col-balanza">
                     <label for="formGroupExampleInput" class="form-label">Id Cartonero:</label>
-                    <input type="number" class="form-control" placeholder="IdCartonero">
+                    <input type="number" id="id_cartonero" class="form-control" name="id_usuario" placeholder="IdCartonero">
                 </div>
                 <div class="d-grid gap-2 col-2">
                     <button class="btn btn-primary" type="submit"> Enviar</button>
@@ -43,3 +43,4 @@
     </div>
 </div>
 {include file="footer.tpl"}
+

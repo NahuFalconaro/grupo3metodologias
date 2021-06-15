@@ -34,9 +34,9 @@ class View
     }
 
     //muesta el formulario de la balanza y todos los materiales recolectados con su peso
-    function showBalanza($materiales){
+    function showBalanza($Materiales){
         $smarty = new Smarty();
-        $smarty->assign('Materiales', $materiales);
+        $smarty->assign('Materiales', $Materiales);
         $smarty->display('templates/balanza.tpl');
     }
 

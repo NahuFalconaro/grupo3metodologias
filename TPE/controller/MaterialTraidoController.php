@@ -1,22 +1,25 @@
 <?php
     require_once  "model/MaterialTraidoModel.php";
+    require_once  "model/MaterialModel.php";
     require_once  "UserController.php";
     require_once  "view/View.php";
 
     class MaterialTraidoController
     {
         private $modelMaterialTraido;
+        private $modelMaterial;
         private $view;
         //private $userController;
 
         function __construct(){
             $this->modelMaterialTraido = new MaterialTraidoModel();
+            $this->modelMaterial = new MaterialModel();
             $this->view = new View();
             //$this->userController = new UserController();
         }
 
         function getBalanza(){
-            $Materiales = $this->modelMaterialTraido->getMaterialesTotales();
+            $Materiales = $this->modelMaterial->getMaterialesAceptados();
             $this->view->showBalanza($Materiales);
         }
 
@@ -25,23 +28,22 @@
             $id_material = $_POST['id_materialTraido'];
             $peso = $_POST['pesoTraido'];
             $id_usuario = $_POST['id_usuario'];
-            $material = $this->modelMaterial->getMaterialesTotales();
-            if(!empty($material)){// la descripcion no es necesaria si el material no es aceptado
-                if($material->aceptado = '1'){
-                    if(!empty($id_usuario)){
+            $material = $this->modelMaterial->getMaterial($id_material);
+            //if(!empty($material)){// la descripcion no es necesaria si el material no es aceptado
+                    if(!isset($id_usuario)){
                         $this->modelMaterialTraido->insertMaterialTraido($id_material, $peso, $id_usuario);
                     }else{
-                        $pesoVecino = $this->modelMaterialTraido->getPesoVecinoBuenaOnda();
-                        $this->modelMaterialTraido->insertMaterialTraido($id_material, $peso + $pesoVecino, 2);//2 siendo el usuario de vecino buena onda
+                        $materialVecino = $this->modelMaterialTraido->getMaterialVecinoBuenaOnda($id_material);
+                        if(empty($materialVecino)){
+                            $this->modelMaterialTraido->insertMaterialTraido($id_material, $peso, 0);  
+                        }else{
+                             $this->modelMaterialTraido->updateMaterialTraido($peso + $materialVecino->peso, $id_material);//2 siendo el usuario de vecino buena onda
+                        }
+                        header("Location: " . BASE_BALANZA);
                     }
-                    $materiales = $this->modelMaterialTraido->getMaterialesTotales();
-                    $this->view->showBalanza($materiales);
-                }else{
-                    $this->view->showError();
-                }
-            }else{
-                $this->view->showError();
-            }
-        }
 
+              //  }else{
+                //$this->view->showError();
+            //}
+        }
 }
