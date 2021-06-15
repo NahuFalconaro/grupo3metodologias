@@ -20,12 +20,17 @@
         $sentencia->execute();
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
-    //temporal
-    function getMaterialesAceptados(){
-        $sentencia = $this->db->prepare("SELECT * FROM materiales WHERE aceptado=1");
-        $sentencia->execute();
-        return $sentencia->fetchAll(PDO::FETCH_OBJ);
+
+    function getMaterialesTotales(){
+        $sentencia = $this->db->prepare("SELECT mt.nombre, SUM(mt.peso) AS 'Peso Total'
+                                        FROM material_traido
+                                        JOIN materiales m ON (m.id_materiales = mt.id_material)
+                                        GROUP BY mt.nombre");
+        $sentencia->execute();   
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);                        
     }
+
+
 
 
 }

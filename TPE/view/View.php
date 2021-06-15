@@ -33,10 +33,10 @@ class View
         $smarty->display('templates/verRecorridos.tpl');
     }
 
-    //muesta el formulario de la balanza
-    function showBalanza($Materiales){
+    //muesta el formulario de la balanza y todos los materiales recolectados con su peso
+    function showBalanza($materiales){
         $smarty = new Smarty();
-        $smarty->assign('Materiales', $Materiales);
+        $smarty->assign('Materiales', $materiales);
         $smarty->display('templates/balanza.tpl');
     }
 
@@ -78,6 +78,7 @@ class View
         $smarty->display('templates/updateMaterial.tpl');
     }
 
+
     //redirige a materiales
     function ShowHomeLocation()
     {
@@ -87,4 +88,6 @@ class View
     {
         header("Location: " . BASE_URL . "adminMaterial");
     }
+
+
 }
