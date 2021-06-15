@@ -30,7 +30,7 @@
             $id_usuario = $_POST['id_usuario'];
             $material = $this->modelMaterial->getMaterial($id_material);
             //if(!empty($material)){// la descripcion no es necesaria si el material no es aceptado
-                    if(!isset($id_usuario)){
+                    if(isset($id_usuario)){
                         $this->modelMaterialTraido->insertMaterialTraido($id_material, $peso, $id_usuario);
                     }else{
                         $materialVecino = $this->modelMaterialTraido->getMaterialVecinoBuenaOnda($id_material);
@@ -41,6 +41,7 @@
                         }
                         header("Location: " . BASE_BALANZA);
                     }
+                    header("Location: " . BASE_BALANZA);
 
               //  }else{
                 //$this->view->showError();
