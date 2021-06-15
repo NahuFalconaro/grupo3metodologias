@@ -40,7 +40,7 @@ $r->addRoute("verifyUser", "POST", "UserController", "verifyUser");
 $r->addRoute("logout", "GET", "UserController", "Logout");
 
 $r->addRoute("insertMaterialTraido", "POST", "MaterialTraidoController", "insertMaterialTraido");
-$r->addRoute("formMaterialTraido", "GET", "MaterialTraidoController", "getMaterialTraido");//Ruta donde muestra los materiales
+$r->addRoute("formMaterialTraido", "GET", "MaterialTraidoController", "getMaterialTraido");//Ruta donde muestra los materiales traidos
 
 $r->addRoute("getEditMaterial/:ID", "GET", "MaterialController", "getEditMaterial");
 $r->addRoute("updateMaterial/:ID", "POST", "MaterialController", "updateMaterial");
