@@ -3,6 +3,7 @@
 require_once 'controller/PedidoController.php';
 require_once "controller/IndexController.php";
 require_once "controller/MaterialController.php";
+require_once "controller/MaterialTraidoController.php";
 require_once 'RouterClass.php';
 
 // CONSTANTES PARA RUTEO
@@ -37,6 +38,9 @@ $r->addRoute("submitForm", "POST", "PedidoController", "agregarPedido");
 $r->addRoute("loginscreen", "GET", "UserController", "Login");
 $r->addRoute("verifyUser", "POST", "UserController", "verifyUser");
 $r->addRoute("logout", "GET", "UserController", "Logout");
+
+$r->addRoute("insertMaterialTraido", "POST", "MaterialTraidoController", "insertMaterialTraido");
+$r->addRoute("formMaterialTraido", "GET", "MaterialTraidoController", "getMaterialTraido");//Ruta donde muestra los materiales
 
 $r->addRoute("getEditMaterial/:ID", "GET", "MaterialController", "getEditMaterial");
 $r->addRoute("updateMaterial/:ID", "POST", "MaterialController", "updateMaterial");
