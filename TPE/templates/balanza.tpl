@@ -11,11 +11,11 @@
             <h3>Registra el peso del material</h3>
         </div>
         <div class="row justify-content-end">
-            <form class="col-4">
+            <form form class="row col-4" enctype="multipart/form-data" action="insertMaterialTraido" method="post">
                 <div class="col-8 col-balanza">
                     <label for="formGroupExampleInput" class="form-label">Usuario:</label>
-                    <select name="rol" id="" class="form-select">
-                        <option value="0">Vecino Buena honda</option>
+                    <select name="rol" id="rol" class="form-select rol">
+                        <option value="0">Vecino Buena onda</option>
                         <option value="1">Cartonero</option>
                     </select>
                 </div>

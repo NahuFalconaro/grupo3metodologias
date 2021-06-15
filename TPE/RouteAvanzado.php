@@ -40,14 +40,14 @@ $r->addRoute("verifyUser", "POST", "UserController", "verifyUser");
 $r->addRoute("logout", "GET", "UserController", "Logout");
 
 $r->addRoute("insertMaterialTraido", "POST", "MaterialTraidoController", "insertMaterialTraido");
-$r->addRoute("formMaterialTraido", "GET", "MaterialTraidoController", "getMaterialTraido");//Ruta donde muestra los materiales traidos
+$r->addRoute("balanza", "GET", "MaterialTraidoController", "getBalanza");//Ruta donde muestra los materiales traidos
 
 $r->addRoute("getEditMaterial/:ID", "GET", "MaterialController", "getEditMaterial");
 $r->addRoute("updateMaterial/:ID", "POST", "MaterialController", "updateMaterial");
 
 //balanza
-$r->addRoute("balanza", "GET", "MaterialController", "getBalanza");
-$r->addRoute("insertBalanza", "POST", "MaterialController", "agregarPesoMaterial");
+
+//$r->addRoute("insertBalanza", "POST", "MaterialController", "agregarPesoMaterial");
 //Rutas de ejemplo 
 
 // $r->addRoute("about", "GET", "GalleryController", "About");

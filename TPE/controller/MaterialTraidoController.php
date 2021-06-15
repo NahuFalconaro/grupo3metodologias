@@ -14,6 +14,12 @@
             $this->view = new View();
             //$this->userController = new UserController();
         }
+
+        function getBalanza(){
+            $Materiales = $this->modelMaterialTraido->getMaterialesAceptados();
+            $this->view->showBalanza($Materiales);
+        }
+
         function insertMaterialTraido(){//Inserta el material traido por vecinos o cartoneros
             //$logged = $this->userController->getAccess(); 
             $id_material = $_POST['id_materialTraido'];
@@ -23,7 +29,7 @@
             if(!empty($material)){// la descripcion no es necesaria si el material no es aceptado
                 if($material->aceptado = '1'){
                     if(!empty($id_usuario)){
-                        $this->modelMatmodelMaterialTraidoerial->insertMaterialTraido($id_material, $peso, $id_usuario);
+                        $this->modelMaterialTraido->insertMaterialTraido($id_material, $peso, $id_usuario);
                     }else{
                         $pesoVecino = $this->modelMaterialTraido->getPesoVecinoBuenaOnda();
                         $this->modelMaterialTraido->insertMaterialTraido($id_material, $peso + $pesoVecino, 2);//2 siendo el usuario de vecino buena onda

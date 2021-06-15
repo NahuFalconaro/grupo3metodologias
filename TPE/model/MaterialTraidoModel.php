@@ -20,8 +20,12 @@
         $sentencia->execute();
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
-
-
+    //temporal
+    function getMaterialesAceptados(){
+        $sentencia = $this->db->prepare("SELECT * FROM materiales WHERE aceptado=1");
+        $sentencia->execute();
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
+    }
 
 
 }
