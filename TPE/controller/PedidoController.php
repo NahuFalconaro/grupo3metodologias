@@ -15,7 +15,6 @@ class PedidoController
     {
         $this->pedidoModel = new PedidoModel();
         $this->view = new View();
-        define("BASE_URL", 'http://' . $_SERVER["SERVER_NAME"] . ':' . $_SERVER["SERVER_PORT"] . dirname($_SERVER["PHP_SELF"]) . '/home');
     }
 
     //Comprueba y manda al Model el pedido, luego redirecciona al Home
@@ -45,5 +44,11 @@ class PedidoController
 
         $this->pedidoModel->addPedido($nombre, $apellido, $ubicacion, $telefono, $imagen, $claseVehiculo, $franjaHoraria);
         header("Location: " . BASE_FORM_PEDIDO);
+    }
+
+    //traigo de la db los pedidos y muestro solo las direcciones en el front
+    function verRecorridos(){
+       $pedidos = $this->pedidoModel->getAllPedidos();
+       $this->view->verRecorridos($pedidos);
     }
 }

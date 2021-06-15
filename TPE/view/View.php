@@ -26,11 +26,11 @@ class View
     }
 
     //Muestra todos los recorridos
-    function showRecorridos($pedidos)
+    function verRecorridos($pedidos)
     {
         $smarty = new Smarty();
         $smarty->assign('Pedidos', $pedidos);
-        $smarty->display('templates/verRecorridos.tpl');
+        $smarty->display('templates/recorridos.tpl');
     }
 
     //muesta el formulario de la balanza y todos los materiales recolectados con su peso

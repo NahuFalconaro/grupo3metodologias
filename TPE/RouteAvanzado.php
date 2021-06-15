@@ -13,21 +13,15 @@ define("BASE_FORM_PEDIDO", 'http://' . $_SERVER["SERVER_NAME"] . ':' . $_SERVER[
 //esto lo agrego para comparar
 $r = new Router();
 
-// rutas
-$r->addRoute("logout", "GET", "UserController", "Logout");
 
-$r->addRoute("agregarpedido", "POST", "PedidoController", "formPedido");
-$r->addRoute("pedidos", "GET", "PedidoController", "formPedido");
 
 
 
 //Ejemplo:
 // addRoute("palabra en URL", "Método", "Controlador encargado", "Nombre de funcion")
 
-//debug route
-$r->addRoute("recorridos", "GET", "PedidoController", "verPedidos");
 
-
+// rutas
 $r->addRoute("home", "GET", "IndexController", "home");
 $r->addRoute("formPedido", "GET", "IndexController", "formPedido");
 $r->addRoute("insertMaterial", "POST", "MaterialController", "insertMaterial");
@@ -38,6 +32,12 @@ $r->addRoute("submitForm", "POST", "PedidoController", "agregarPedido");
 $r->addRoute("loginscreen", "GET", "UserController", "Login");
 $r->addRoute("verifyUser", "POST", "UserController", "verifyUser");
 $r->addRoute("logout", "GET", "UserController", "Logout");
+$r->addRoute("recorridos", "GET", "PedidoController", "verRecorridos");
+
+$r->addRoute("logout", "GET", "UserController", "Logout");
+
+$r->addRoute("agregarpedido", "POST", "PedidoController", "formPedido");
+$r->addRoute("pedidos", "GET", "PedidoController", "formPedido");
 
 $r->addRoute("insertMaterialTraido", "POST", "MaterialTraidoController", "insertMaterialTraido");
 $r->addRoute("balanza", "GET", "MaterialTraidoController", "getBalanza");//Ruta donde muestra los materiales traidos
