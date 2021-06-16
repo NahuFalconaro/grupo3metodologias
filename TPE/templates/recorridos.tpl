@@ -17,6 +17,7 @@
                     <tr>
                         <th scope="col"> Dirección </th>
                         <th scope="col"> Clase de vehículo requerido </th>
+                        <th scope="col"> Horario </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,6 +33,7 @@
                             {else}
                                 <td>Camión (d)</td>
                             {/if}
+                            <td>{$pedido->franja_horaria}</td>
                         </tr>
                     {/foreach}
                 </tbody>
