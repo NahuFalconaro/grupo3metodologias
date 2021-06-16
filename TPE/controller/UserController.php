@@ -30,7 +30,7 @@ class UserController  extends Controller{
     }
     
     //cierra la sesion y redirige a home
-    function Logout(){
+    function logout(){
         session_start();
         session_destroy();
         header("Location: ".BASE_URL);
