@@ -6,7 +6,7 @@ require_once  "Controller.php";
 class UserController  extends Controller{
 
 
-    private $modelUser;
+    
 
     function __construct(){
         $this->view = new View();
