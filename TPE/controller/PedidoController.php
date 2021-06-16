@@ -6,14 +6,19 @@ require_once  "Controller.php";
 class PedidoController  extends Controller
 {
 
-
     private $pedidoModel;
-
 
     function __construct()
     {
         $this->view = new View();
         $this->pedidoModel = new PedidoModel();
+    }
+
+    //se fija si esta logeado y llama a la view del formulario de contactanos
+    function formPedido()
+    {
+        //$logged = $this->userController->getAccess();
+        $this->view->Form();
     }
 
     //Comprueba y manda al Model el pedido, luego redirecciona al Home

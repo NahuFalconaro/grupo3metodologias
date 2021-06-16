@@ -25,7 +25,7 @@ $r = new Router();
 
 // rutas
 $r->addRoute("home", "GET", "IndexController", "home");
-$r->addRoute("formPedido", "GET", "IndexController", "formPedido");
+$r->addRoute("formPedido", "GET", "PedidoController", "formPedido");
 $r->addRoute("insertMaterial", "POST", "MaterialController", "insertMaterial");
 $r->addRoute("deleteMaterial/:ID", "GET", "MaterialController", "deleteMaterial");
 $r->addRoute("materiales", "GET", "MaterialController", "showMateriales");

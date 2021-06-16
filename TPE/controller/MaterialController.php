@@ -1,18 +1,18 @@
 <?php
 
     require_once  "model/MaterialModel.php";
-    require_once  "UserController.php";
+  //  require_once  "UserController.php";
     require_once  "Controller.php";
 
     class MaterialController extends Controller{
         
         private $modelMaterial;
-        private $userController;
+     //   private $userController;
 
         function __construct(){
             $this->view = new View();
             $this->modelMaterial = new MaterialModel();
-            $this->userController = new UserController();  
+        //    $this->userController = new UserController();  
         }
         //Funcion la cual obtiene los materiales de la base de datos, consulta por el estado de acceso del usuario
         //y lo pasa para que lo renderice la vista
@@ -22,12 +22,12 @@
         }
         function showMaterialesAdmin($params = null){
             $materiales = $this->modelMaterial->getMateriales(); 
-            $logged = $this->userController->getAccess();   
-            $this->view->ShowCarteleraAdmin($materiales, $logged);
+        //    $logged = $this->userController->getAccess();   
+            $this->view->ShowCarteleraAdmin($materiales);
         }
         //Funcion que inserta un material nuevo a la base de datos, obteniendo los datos desde formulario de la vista
         function insertMaterial(){
-            $logged = $this->userController->getAccess(); 
+        //    $logged = $this->userController->getAccess(); 
             $nombre = $_POST['nombre'];
             $aceptado = $_POST['aceptado'];
             $descripcion = $_POST['descripcion'];

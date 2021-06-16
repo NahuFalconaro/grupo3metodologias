@@ -10,10 +10,9 @@ class View
     }
 
     //muestra el home
-    function ShowHome($logged)
+    function ShowHome()
     {
         $smarty = new Smarty();
-        $smarty->assign('Logged', $logged);
         $smarty->assign('Titulo', 'Grupo 3 Metodologias');
         $smarty->display('templates/home.tpl');
     }
@@ -41,10 +40,9 @@ class View
     }
 
     //muestra el formulario de contacto
-    function Form($logged)
+    function Form()
     {
         $smarty = new Smarty();
-        $smarty->assign('Logged', $logged);
         $smarty->display('templates/formPedido.tpl');
     }
 
@@ -56,11 +54,11 @@ class View
         $smarty->display('templates/carteleraPublica.tpl');
     }
     //muestra los materiales al admin con opcion de edicion
-    function ShowCarteleraAdmin($Materiales, $logged)
+    function ShowCarteleraAdmin($Materiales)
     {
         $smarty = new Smarty();
         $smarty->assign('Materiales', $Materiales);
-        $smarty->assign('Logged', $logged);
+ //       $smarty->assign('Logged', $logged);
         $smarty->display('templates/materiales.tpl');
     }
     //muestra error al insertar o updatear un material y no existe el material o hay campos vacios
