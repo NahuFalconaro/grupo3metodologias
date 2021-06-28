@@ -1,10 +1,8 @@
 <?php
 
 require_once 'controller/PedidoController.php';
-require_once "controller/IndexController.php";
 require_once "controller/MaterialController.php";
 require_once "controller/MaterialTraidoController.php";
-require_once 'controller/Controller.php';
 require_once 'RouterClass.php';
 
 // CONSTANTES PARA RUTEO
@@ -24,7 +22,7 @@ $r = new Router();
 
 
 // rutas
-$r->addRoute("home", "GET", "IndexController", "home");
+$r->addRoute("home", "GET", "MaterialController", "home");
 $r->addRoute("formPedido", "GET", "PedidoController", "formPedido");
 $r->addRoute("insertMaterial", "POST", "MaterialController", "insertMaterial");
 $r->addRoute("deleteMaterial/:ID", "GET", "MaterialController", "deleteMaterial");
@@ -73,7 +71,7 @@ $r->addRoute("updateMaterial/:ID", "POST", "MaterialController", "updateMaterial
 
 
 //Ruta por defecto.
-$r->setDefaultRoute("IndexController", "home");
+$r->setDefaultRoute("MaterialController", "home");
 
 //run
 $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']);

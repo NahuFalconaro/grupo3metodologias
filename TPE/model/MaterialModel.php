@@ -1,8 +1,15 @@
 <?php
-    require_once 'Model.php';
+
    
    
-    class MaterialModel extends Model{
+    class MaterialModel{
+
+    protected $db;
+
+    function __construct()
+    {
+        $this->db = new PDO('mysql:host=localhost;' . 'dbname=bd_metodologias;charset=utf8', 'root', '');
+    }
     //Funcion que trae todos los materiales de la base de datos
     function getMateriales(){
         $query = $this->db->prepare("SELECT * FROM materiales");

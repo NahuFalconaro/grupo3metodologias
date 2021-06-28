@@ -2,18 +2,19 @@
     require_once  "model/MaterialTraidoModel.php";
     require_once  "model/MaterialModel.php";
     require_once  "UserController.php";
-    require_once  "Controller.php";
-    class MaterialTraidoController  extends Controller
+    require_once  "view/View.php";
+    class MaterialTraidoController
     {
         private $modelMaterialTraido;
         private $modelMaterial;
-        //private $userController;
-
+        private $userController;
+        protected $model;
+        protected $view;
         function __construct(){
             $this->view = new View();
             $this->modelMaterialTraido = new MaterialTraidoModel();
             $this->modelMaterial = new MaterialModel();
-            //$this->userController = new UserController();
+            $this->userController = new UserController();
         }
 
         function getBalanza(){
@@ -22,7 +23,7 @@
         }
 
         function insertMaterialTraido(){//Inserta el material traido por vecinos o cartoneros
-            //$logged = $this->userController->getAccess(); 
+            $logged = $this->userController->getAccess(); 
             $id_material = $_POST['id_materialTraido'];
             $peso = $_POST['pesoTraido'];
             $id_usuario = $_POST['id_usuario'];

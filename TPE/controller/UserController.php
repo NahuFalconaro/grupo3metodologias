@@ -1,12 +1,12 @@
 <?php
 
 require_once "model/UserModel.php";
-require_once  "Controller.php";
+require_once  "view/View.php";
+class UserController{
 
-class UserController  extends Controller{
 
-
-    
+    protected $model;
+    protected $view;
 
     function __construct(){
         $this->view = new View();
@@ -46,7 +46,7 @@ class UserController  extends Controller{
            
             $temp = md5($pass); 
 
-            //if(password_verify($temp, $username->pass)){
+            if(password_verify($temp, $username->pass)){
               if($temp == $username->pass){
                 session_start();
                 $_SESSION['ID_USER'] = $username->id;
@@ -57,9 +57,8 @@ class UserController  extends Controller{
                 $this->view->ShowHome(0);
         }else
             $this->view->ShowHome(0);
+       }
     }
-
 }
-
 
 ?>
