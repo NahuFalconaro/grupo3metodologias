@@ -83,9 +83,15 @@ class UserController
         $key = $params[":ID"];
         $dni = $_POST["dni"];
         $nombre = $_POST["nombre"];
+        $apellido = $_POST["apellido"];
+        $telefono = $_POST["telefono"];
+        $email = $_POST["email"];
+        $direccion = $_POST["direccion"];
+        $fecha_nacimiento = $_POST["fecha_nacimiento"];
+        $clase_vehiculo = $_POST["clase_vehiculo"];
         $rol = $_POST["user_role"];
 
-        $this->modelUser->updateUser($key, $dni, $nombre, $rol);
+        $this->modelUser->updateUser($key, $dni, $nombre, $apellido,  $telefono, $email, $direccion, $fecha_nacimiento, $clase_vehiculo, $rol);
         print(1);
     }
 
@@ -93,26 +99,25 @@ class UserController
     {
         $dni = $_POST["dni"];
         $nombre = $_POST["nombre"];
+        $apellido = $_POST["apellido"];
+        $telefono = $_POST["telefono"];
+        $email = $_POST["email"];
+        $direccion = $_POST["direccion"];
+        $fecha_nacimiento = $_POST["fecha_nacimiento"];
+        $clase_vehiculo = $_POST["clase_vehiculo"];
         $rol = $_POST["user_role"];
 
-        $this->modelUser->addUser($dni, $nombre, $rol);
-        print(50);
+        $this->modelUser->addUser($dni, $nombre, $apellido, $telefono, $email, $direccion, $fecha_nacimiento, $clase_vehiculo, $rol);
+        $users = $this->modelUser->getAllUsers();
+        $this->view->showAbmUsuarios($users);
     }
 
     function deleteUser($params = null)
     {
-        print("QUE ONDAAA");
-        die();
-
         $key = $params[":ID"];
-        // $this->modelUser->deleteUser($key);
-        print($key);
+        $this->modelUser->deleteUser($key);
+        $this->view->ShowDashboardLocation();
     }
-
-    function prueba(){
-        print("Wat");
-    }
-
 
     function checkCredentials()
     {
