@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-07-2021 a las 18:40:39
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.6
+-- Tiempo de generación: 02-07-2021 a las 00:35:56
+-- Versión del servidor: 10.4.13-MariaDB
+-- Versión de PHP: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -89,6 +89,12 @@ CREATE TABLE `pedido` (
 CREATE TABLE `usuario` (
   `dni` int(50) NOT NULL,
   `nombre` varchar(20) NOT NULL,
+  `apellido` varchar(20) NOT NULL,
+  `telefono` int(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `direccion` varchar(100) NOT NULL,
+  `fecha_nacimiento` varchar(20) NOT NULL,
+  `clase_vehiculo` char(1) NOT NULL,
   `pass` varchar(100) DEFAULT NULL,
   `rol` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -97,9 +103,10 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`dni`, `nombre`, `pass`, `rol`) VALUES
-(1234, 'Pablo', NULL, 'cartonero'),
-(43455973, 'miguelitonnnn', '$2y$10$.J6RA6NXk0GJ04L.Qv7A2uuyxZiNOZMHePhCDVkYQyhDVMfNa52S.', 'admin');
+INSERT INTO `usuario` (`dni`, `nombre`, `apellido`, `telefono`, `email`, `direccion`, `fecha_nacimiento`, `clase_vehiculo`, `pass`, `rol`) VALUES
+(1111, 'pepito', 'perez', 156324542, 'pepito@gmail.com', 'pasaje falso 123', '10-02-1985', 'a', NULL, 'cartonero'),
+(1234, 'Pedro', 'Gomez', 154895132, 'pedro@gmail.com', 'pasaje 1234', '15-05-2000', 'd', NULL, 'cartonero'),
+(43455973, 'miguelitonnnn', '', 0, '', '', '', '', '$2y$10$.J6RA6NXk0GJ04L.Qv7A2uuyxZiNOZMHePhCDVkYQyhDVMfNa52S.', 'admin');
 
 --
 -- Índices para tablas volcadas
