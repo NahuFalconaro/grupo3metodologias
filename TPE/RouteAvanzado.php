@@ -43,7 +43,7 @@ $r->addRoute("modifyUser/:ID", "POST", "UserController", "modifyUser");
 $r->addRoute("addUser", "POST", "UserController", "addUser");
 
 //rota??
-$r->addRoute("deleteUser/:ID", "POST", "UserController", "prueba");
+$r->addRoute("deleteUser/:ID", "GET", "UserController", "deleteUser");
 
 
 

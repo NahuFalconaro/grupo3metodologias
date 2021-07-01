@@ -32,17 +32,30 @@
                             <tr>
                                 <th scope="col">DNI</th>
                                 <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">E-mail</th>
+                                <th scope="col">Direccion</th>
+                                <th scope="col">Fecha de nacimiento</th>
+                                <th scope="col">Vehiculo</th>
                                 <th scope="col">Rol</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {* {foreach from=$usuarios item=usuario} *}
+                            {foreach from=$usuario item=user}
+                                {if $user->rol == "cartonero"}
                                 <tr>
-                                    <td>{$usuario->dni}</td>
-                                    <td>{$usuario->nombre}</td>
-                                    <td>{$usuario->rol}</td>
+                                    <td>{$user->dni}</td>
+                                    <td>{$user->nombre}</td>
+                                    <td>{$user->apellido}</td>
+                                    <td>{$user->telefono}</td>
+                                    <td>{$user->email}</td>
+                                    <td>{$user->direccion}</td>
+                                    <td>{$user->fecha_nacimiento}</td>
+                                    <td>{if $user->clase_vehiculo == "a"}Carrito{else if $user->clase_vehiculo == "b"} Auto {else if $user->clase_vehiculo == "c"}Camioneta {else} Camion {/if}</td>
+                                    <td>{$user->rol}</td>
                                     <td>
-                                        <a href="deleteUser/{$usuario->dni}">
+                                        <a href="deleteUser/{$user->dni}" id="deleteUser">
                                             <button class="btn btn-primary">
                                                 Eliminar
                                             </button>
@@ -55,7 +68,8 @@
                                     </td>
 
                                 </tr>
-                            {* {/foreach} *}
+                                {/if}
+                            {/foreach}
                         </tbody>
                     </table>
                 </div>
