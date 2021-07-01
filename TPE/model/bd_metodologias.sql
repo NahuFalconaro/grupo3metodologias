@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2021 a las 19:09:16
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 8.0.0
+-- Tiempo de generación: 01-07-2021 a las 18:40:39
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -87,19 +87,19 @@ CREATE TABLE `pedido` (
 --
 
 CREATE TABLE `usuario` (
-  `id` int(11) NOT NULL,
-  `usuario` varchar(20) NOT NULL,
-  `pass` varchar(100) NOT NULL,
-  `admin` tinyint(1) NOT NULL
+  `dni` int(50) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `pass` varchar(100) DEFAULT NULL,
+  `rol` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `usuario`, `pass`, `admin`) VALUES
-(5, 'vecino', 'vecino', 2),
-(6, 'cartonero', 'cartonero', 1);
+INSERT INTO `usuario` (`dni`, `nombre`, `pass`, `rol`) VALUES
+(1234, 'Pablo', NULL, 'cartonero'),
+(43455973, 'miguelitonnnn', '$2y$10$.J6RA6NXk0GJ04L.Qv7A2uuyxZiNOZMHePhCDVkYQyhDVMfNa52S.', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -127,7 +127,7 @@ ALTER TABLE `pedido`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`dni`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -144,12 +144,6 @@ ALTER TABLE `materiales`
 --
 ALTER TABLE `pedido`
   MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas

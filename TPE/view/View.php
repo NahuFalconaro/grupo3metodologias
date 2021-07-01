@@ -21,7 +21,7 @@ class View
     function ShowLogin()
     {
         $smarty = new Smarty();
-        $smarty->display('templates/ShowLogin.tpl');
+        $smarty->display('templates/showLogin.tpl');
     }
 
     //Muestra todos los recorridos
@@ -68,12 +68,23 @@ class View
         $smarty->display('templates/showErrorMaterial.tpl');
     }
 
+    function showDashboard(){
+        $smarty = new Smarty();
+        $smarty->display('templates/dashboard.tpl');
+    }
+
     //popup del update
     function showUpdateMaterial($Material)
     {
         $smarty = new Smarty();
         $smarty->assign('Materiales', $Material);
         $smarty->display('templates/updateMaterial.tpl');
+    }
+
+    function showAbmUsuarios($users){
+        $smarty = new Smarty();
+        $smarty->assign('usuario', $users);
+        $smarty->display('templates/abmUsuarios.tpl');
     }
 
 
@@ -87,5 +98,7 @@ class View
         header("Location: " . BASE_URL . "adminMaterial");
     }
 
-
+    function ShowDashboardLocation(){
+        header("Location: " . BASE_URL . "dashboard");
+    }
 }

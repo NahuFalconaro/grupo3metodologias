@@ -16,7 +16,7 @@ class PedidoController
     //se fija si esta logeado y llama a la view del formulario de contactanos
     function formPedido()
     {
-        $logged = $this->userController->getAccess();
+        // $logged = $this->userController->getAccess();
         $this->view->Form();
     }
 

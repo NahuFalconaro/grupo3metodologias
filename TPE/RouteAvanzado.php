@@ -30,9 +30,22 @@ $r->addRoute("materiales", "GET", "MaterialController", "showMateriales");
 $r->addRoute("adminMaterial", "GET", "MaterialController", "showMaterialesAdmin");
 $r->addRoute("submitForm", "POST", "PedidoController", "agregarPedido");
 $r->addRoute("loginscreen", "GET", "UserController", "Login");
+
 $r->addRoute("verifyUser", "POST", "UserController", "verifyUser");
+$r->addRoute("dashboard", "GET", "UserController", "showDashboard");
+
 $r->addRoute("logout", "GET", "UserController", "Logout");
 $r->addRoute("recorridos", "GET", "PedidoController", "verRecorridos");
+
+//Actual
+$r->addRoute("showUsuarios", "GET", "UserController", "abmUsuarios");
+$r->addRoute("modifyUser/:ID", "POST", "UserController", "modifyUser");
+$r->addRoute("addUser", "POST", "UserController", "addUser");
+
+//rota??
+$r->addRoute("deleteUser/:ID", "POST", "UserController", "prueba");
+
+
 
 $r->addRoute("logout", "GET", "UserController", "Logout");
 
