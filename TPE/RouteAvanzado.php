@@ -31,6 +31,8 @@ $r->addRoute("adminMaterial", "GET", "MaterialController", "showMaterialesAdmin"
 $r->addRoute("submitForm", "POST", "PedidoController", "agregarPedido");
 $r->addRoute("loginscreen", "GET", "UserController", "Login");
 
+
+
 $r->addRoute("verifyUser", "POST", "UserController", "verifyUser");
 $r->addRoute("dashboard", "GET", "UserController", "showDashboard");
 
@@ -54,6 +56,7 @@ $r->addRoute("pedidos", "GET", "PedidoController", "formPedido");
 
 $r->addRoute("insertMaterialTraido", "POST", "MaterialTraidoController", "insertMaterialTraido");
 $r->addRoute("balanza", "GET", "MaterialTraidoController", "getBalanza");//Ruta donde muestra los materiales traidos
+$r->addRoute("materialesAcopiados", "GET", "MaterialTraidoController", "listarMaterialesPorCartoneros");
 
 $r->addRoute("getEditMaterial/:ID", "GET", "MaterialController", "getEditMaterial");
 $r->addRoute("updateMaterial/:ID", "POST", "MaterialController", "updateMaterial");

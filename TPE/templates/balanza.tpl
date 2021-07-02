@@ -33,7 +33,7 @@
                 </div>
                 <div id="div_cartonero" class="col-8 col-balanza hidden">
                     <label for="formGroupExampleInput" class="form-label">Id Cartonero:</label>
-                    <input type="number" id="id_cartonero" class="form-control" min="1" name="id_usuario" placeholder="IdCartonero">
+                    <input type="number" id="id_cartonero" class="form-control" min="1" name="dni" placeholder="IdCartonero">
                 </div>
                 <div class="d-grid gap-2 col-2">
                     <button class="btn btn-primary" type="submit"> Enviar</button>

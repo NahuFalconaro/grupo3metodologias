@@ -53,6 +53,7 @@ class View
         $smarty->assign('Materiales', $Materiales);
         $smarty->display('templates/carteleraPublica.tpl');
     }
+
     //muestra los materiales al admin con opcion de edicion
     function ShowCarteleraAdmin($Materiales)
     {
@@ -86,7 +87,13 @@ class View
         $smarty->assign('usuario', $users);
         $smarty->display('templates/abmUsuarios.tpl');
     }
-
+    //muestra los materiale traidos por los cartoneros
+    function listarMaterialesPorCartoneros($Materiales)
+    {
+        $smarty = new Smarty();
+        $smarty->assign('Materiales', $Materiales);
+        $smarty->display('templates/listaMaterialesAcopiados.tpl');
+    }
 
     //redirige a materiales
     function ShowHomeLocation()
