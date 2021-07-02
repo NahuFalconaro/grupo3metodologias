@@ -43,7 +43,7 @@
         }
 
         function listarMaterialesPorCartoneros(){
-            $tablaUsuario = $this->modelMaterialTraido->getMaterialesPorCartoneros();
-            $this->view->listarMaterialesPorCartoneros($tablaUsuario);
+            $Materiales = $this->modelMaterialTraido->getMaterialesPorCartoneros();
+            $this->view->listarMaterialesPorCartoneros($Materiales);
         }
 }
