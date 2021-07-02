@@ -58,14 +58,14 @@
                     $this->view->ShowAdminMateriales();
                 }
             }
-            //funcion que trae el material para editar y lo muestra en el view
+        //Funcion que trae el material para editar y lo muestra en el view
         function getEditMaterial($params = null){
             $id_materiales = $params[':ID'];
             $Material = $this->modelMaterial->getMaterial($id_materiales);
             $this->view->showUpdateMaterial($Material);
         }
 
-    //se fija si esta logeado y llama a la view del home
+    //Se fija si esta logeado y llama a la view del home
     function home()
     {
         $logged = $this->userController->getAccess();
