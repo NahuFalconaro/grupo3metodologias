@@ -1,5 +1,13 @@
+
 {include file="header.tpl"}
-<div class="contains-fluid">
+<div class="banner">
+    <div class="banner__text">
+        <h3>Servicio Metodologia Grupo 3</h3>
+        <p id='pagina' class="pagina">Registro de materiales por cartoneros</p>
+    </div>
+</div>
+<div class="contains-fluid materiales">
+    <div class="tabla-materiales form">
         <div class="row">
             <div class="title-tpl">
                 <h3>Materiales acopiados por cartoneros</h3>
@@ -21,7 +29,8 @@
                     </tr>
                 {/foreach}
                 </tbody>
-                </table>
-                </div>
-            </div>
+            </table>
+        </div>
     </div>
+</div>
+{include file="footer.tpl"}

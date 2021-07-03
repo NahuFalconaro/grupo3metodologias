@@ -29,7 +29,8 @@
                         SELECT u.nombre AS 'cartonero', m.nombre AS 'material', SUM(mt.peso) AS 'peso'
                                         FROM material_traido mt
                                         JOIN materiales m ON (mt.id_materiales = m.id_materiales)
-                                        JOIN usuario u ON (mt.dni= u.dni)
+                                        LEFT JOIN usuario u ON (mt.dni= u.dni)
+                                        WHERE mt.dni != 0
                                         GROUP BY mt.id_materiales");
         $sentencia->execute();   
         return $sentencia->fetchAll(PDO::FETCH_OBJ);                        

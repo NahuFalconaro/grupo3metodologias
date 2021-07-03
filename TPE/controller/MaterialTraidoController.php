@@ -33,7 +33,7 @@
                     }else{
                         $materialVecino = $this->modelMaterialTraido->getMaterialVecinoBuenaOnda($id_material);
                         if(empty($materialVecino)){
-                            $this->modelMaterialTraido->insertMaterialTraido($id_material, $peso, null);  
+                            $this->modelMaterialTraido->insertMaterialTraido($id_material, $peso, 0);  
                         }else{
                              $this->modelMaterialTraido->updateMaterialTraido($peso + $materialVecino->peso, $id_material);//null siendo el usuario de vecino buena onda
                         }
@@ -43,6 +43,7 @@
         }
 
         function listarMaterialesPorCartoneros(){
+            
             $Materiales = $this->modelMaterialTraido->getMaterialesPorCartoneros();
             $this->view->listarMaterialesPorCartoneros($Materiales);
         }
