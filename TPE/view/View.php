@@ -108,4 +108,8 @@ class View
     function ShowDashboardLocation(){
         header("Location: " . BASE_URL . "dashboard");
     }
+
+    function ShowUsersLocation(){
+        header("Location: " . BASE_URL . "showUsuarios");
+    }
 }

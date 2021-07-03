@@ -15,11 +15,6 @@
     <header>
         <div class='header__top'>
             <h1>Servicio Metodologia Grupo 3</h1>
-            <!--{if $Logged == 3}
-            <a href="#" class='btnLogin'>Iniciar Sesion</a>
-            {else}
-                <a href="logout" class="btnLogin">logout</a>
-            {/if}-->
         </div>
         <div class='header__bot'>
             <ul>
@@ -32,18 +27,3 @@
         </div>
     </header>
 
-    <!--{if $Logged == 3}
-    <div class='d-none popup'>
-        <form action="verifyUser" method="POST" class="form-inline">
-            <div class="login">
-                <h3 >Iniciar Sesion</h3>
-                <input type="text" classs='login__user' name="user" placeholder='User o Email'>
-                <input type="password" class='login__password' name="pass" placeholder='Password'>
-                <p><a href='#'>Olvidaste tu contrasena?</a></p>
-                <button type="submit" class="btn">Iniciar Sesion</button>
-                <button type="button" id="session_btn_close" class="btn">Cancelar</button>
-                <div class='login__barra'></div>
-            </div>
-        </form>
-    </div>
-    {/if}-->

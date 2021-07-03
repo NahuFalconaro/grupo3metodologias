@@ -18,6 +18,13 @@
         {include file="popupUsuarios.tpl"}
     </div>
     <div class="contains-fluid contactanos">
+        <div>
+            <a href="dashboard">
+                <button class="btn btn-primary">
+                    &#8592; Volver
+                </button>
+            </a>
+        </div>
         <div class="form_center">
             <div>
                 <div class="title-tpl">
@@ -44,30 +51,34 @@
                         <tbody>
                             {foreach from=$usuario item=user}
                                 {if $user->rol == "cartonero"}
-                                <tr>
-                                    <td>{$user->dni}</td>
-                                    <td>{$user->nombre}</td>
-                                    <td>{$user->apellido}</td>
-                                    <td>{$user->telefono}</td>
-                                    <td>{$user->email}</td>
-                                    <td>{$user->direccion}</td>
-                                    <td>{$user->fecha_nacimiento}</td>
-                                    <td>{if $user->clase_vehiculo == "a"}Carrito{else if $user->clase_vehiculo == "b"} Auto {else if $user->clase_vehiculo == "c"}Camioneta {else} Camion {/if}</td>
-                                    <td>{$user->rol}</td>
-                                    <td>
-                                        <a href="deleteUser/{$user->dni}" id="deleteUser">
-                                            <button class="btn btn-primary">
-                                                Eliminar
+                                    <tr>
+                                        <td>{$user->dni}</td>
+                                        <td>{$user->nombre}</td>
+                                        <td>{$user->apellido}</td>
+                                        <td>{$user->telefono}</td>
+                                        <td>{$user->email}</td>
+                                        <td>{$user->direccion}</td>
+                                        <td>{$user->fecha_nacimiento}</td>
+                                        <td>{if $user->clase_vehiculo == "a"}Carrito
+                                        {else if $user->clase_vehiculo == "b"} Auto
+                                            {else if $user->clase_vehiculo == "c"}Camioneta 
+                                            {else} Camion 
+                                            {/if}</td>
+                                        <td>{$user->rol}</td>
+                                        <td>
+                                            <a href="deleteUser/{$user->dni}" id="deleteUser">
+                                                <button class="btn btn-primary">
+                                                    Eliminar
+                                                </button>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary modify">
+                                                Modificar
                                             </button>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-primary modify">
-                                            Modificar
-                                        </button>
-                                    </td>
+                                        </td>
 
-                                </tr>
+                                    </tr>
                                 {/if}
                             {/foreach}
                         </tbody>

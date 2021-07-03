@@ -15,18 +15,6 @@ class UserController
         $this->modelUser = new UserModel();
     }
 
-    //verifica si el usuario esta logeado y si lo está, se fija si es admin o no
-
-    function getAccess()
-    {
-        session_start();
-        if (isset($_SESSION['ID_USER'])) {
-            $loged = $this->modelUser->getUser($_SESSION['ID_USER']);
-            return $loged->admin;
-        } else {
-            return 0;
-        }
-    }
     //muestra la view de login
     function Login()
     {
@@ -92,7 +80,7 @@ class UserController
         $rol = $_POST["user_role"];
 
         $this->modelUser->updateUser($key, $dni, $nombre, $apellido,  $telefono, $email, $direccion, $fecha_nacimiento, $clase_vehiculo, $rol);
-        print(1);
+        $this->view->ShowUsersLocation();
     }
 
     function addUser()
@@ -108,15 +96,14 @@ class UserController
         $rol = $_POST["user_role"];
 
         $this->modelUser->addUser($dni, $nombre, $apellido, $telefono, $email, $direccion, $fecha_nacimiento, $clase_vehiculo, $rol);
-        $users = $this->modelUser->getAllUsers();
-        $this->view->showAbmUsuarios($users);
+        $this->abmUsuarios();
     }
 
     function deleteUser($params = null)
     {
         $key = $params[":ID"];
         $this->modelUser->deleteUser($key);
-        $this->view->ShowDashboardLocation();
+        $this->view->ShowUsersLocation();
     }
 
     function checkCredentials()
