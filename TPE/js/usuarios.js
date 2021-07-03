@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         popup_email.value = info["email"];
         popup_direccion.value = info["direccion"];
         popup_fecha_nac.value = info["fecha_nacimiento"];
-        popup_vehiculo.value = info["clase_vehiculo"];
+        popup_vehiculo.selected = info["clase_vehiculo"];
         popup_role.value = info["rol"];
 
         popup_form.action = "modifyUser/" + info["dni"] + "";

@@ -9,10 +9,10 @@
                 <h3>Dashboard</h3>
             </div>
             <div class="btn_row">
-                <a href="materiales">
+                <a href="materialesAcopiados">
                     <button class="btn btn-primary"> Materiales por cartonero </button>
                 </a>
-                <a href="materiales">
+                <a href="adminMaterial">
                     <button class="btn btn-primary"> Modificar cartelera </button>
                 </a>
                 <a href="showUsuarios">

@@ -23,7 +23,7 @@
         }
 
         function insertMaterialTraido(){//Inserta el material traido por vecinos o cartoneros
-            $logged = $this->userController->getAccess(); 
+            // $logged = $this->userController->getAccess(); 
             $id_material = $_POST['id_materialTraido'];
             $peso = $_POST['pesoTraido'];
             $dni = $_POST['dni'];
