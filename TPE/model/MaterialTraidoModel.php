@@ -18,20 +18,22 @@
         $query = $this->db->prepare("UPDATE material_traido SET peso=? WHERE id_materiales = ? AND dni = ?");
         $query->execute(array($peso, $id_material,$dni));
     }
+
     function getMaterialVecinoBuenaOnda($id_material){
         $sentencia = $this->db->prepare("SELECT * FROM material_traido WHERE dni = null AND id_materiales = ?");
         $sentencia->execute(array($id_material));
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
 
+    //trae la cantidad de materiales que trajo cada cartonero ->no incluye el vecino buena onda (dni=null)
     function getMaterialesPorCartoneros(){
         $sentencia = $this->db->prepare("
                         SELECT u.nombre AS 'cartonero', m.nombre AS 'material', SUM(mt.peso) AS 'peso'
                                         FROM material_traido mt
                                         JOIN materiales m ON (mt.id_materiales = m.id_materiales)
                                         LEFT JOIN usuario u ON (mt.dni= u.dni)
-                                        WHERE mt.dni != 0
-                                        GROUP BY mt.id_materiales");
+                                        WHERE u.dni IS NOT NULL
+                                        GROUP BY material,cartonero");
         $sentencia->execute();   
         return $sentencia->fetchAll(PDO::FETCH_OBJ);                        
     }

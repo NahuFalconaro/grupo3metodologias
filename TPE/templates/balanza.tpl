@@ -32,7 +32,7 @@
                     <input type="number" id="peso" class="form-control"  min="0" name="pesoTraido" placeholder="Kg">
                 </div>
                 <div id="div_cartonero" class="col-8 col-balanza hidden">
-                    <label for="formGroupExampleInput" class="form-label">Id Cartonero:</label>
+                    <label for="formGroupExampleInput" class="form-label">DNI Cartonero:</label>
                     <input type="number" id="id_cartonero" class="form-control" min="1" name="dni" placeholder="IdCartonero">
                 </div>
                 <div class="d-grid gap-2 col-2">

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-07-2021 a las 20:06:56
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 8.0.0
+-- Tiempo de generación: 04-07-2021 a las 22:40:04
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -55,6 +55,23 @@ CREATE TABLE `material_traido` (
   `dni` int(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `material_traido`
+--
+
+INSERT INTO `material_traido` (`id_materiales`, `peso`, `dni`) VALUES
+(14, 3, 1111),
+(14, 3, 1111),
+(14, 3, NULL),
+(14, 3, 2222),
+(14, 3, NULL),
+(15, 5, 1111),
+(15, 7, 2222),
+(16, 1, 1111),
+(16, 1, 1111),
+(16, 9, 2222),
+(16, 1, 2222);
+
 -- --------------------------------------------------------
 
 --
@@ -97,6 +114,7 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`dni`, `nombre`, `apellido`, `telefono`, `email`, `direccion`, `fecha_nacimiento`, `clase_vehiculo`, `pass`, `rol`) VALUES
 (1111, 'pepito', 'perez', 156324542, 'pepito@gmail.com', 'pasaje falso 123', '10-02-1985', 'a', NULL, 'cartonero'),
+(2222, 'juancito', 'ramirez', 2233445, 'juancitoramirez@gmail.com', 'calle falsa 222', '03/08/1993', 'a', NULL, 'cartonero'),
 (43455973, 'miguelitonnnn', '', 0, '', '', '', '', '$2y$10$.J6RA6NXk0GJ04L.Qv7A2uuyxZiNOZMHePhCDVkYQyhDVMfNa52S.', 'admin');
 
 --
@@ -113,7 +131,6 @@ ALTER TABLE `materiales`
 -- Indices de la tabla `material_traido`
 --
 ALTER TABLE `material_traido`
-  ADD PRIMARY KEY (`id_materiales`) USING BTREE,
   ADD KEY `fk_materiales_traidos` (`id_materiales`),
   ADD KEY `dni` (`dni`);
 
