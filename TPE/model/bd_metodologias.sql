@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2021 a las 22:40:04
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.7
+-- Tiempo de generación: 05-07-2021 a las 17:19:35
+-- Versión del servidor: 10.4.13-MariaDB
+-- Versión de PHP: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -60,17 +60,17 @@ CREATE TABLE `material_traido` (
 --
 
 INSERT INTO `material_traido` (`id_materiales`, `peso`, `dni`) VALUES
-(14, 3, 1111),
-(14, 3, 1111),
+(14, 3, 44852025),
+(14, 3, 44852025),
 (14, 3, NULL),
-(14, 3, 2222),
+(14, 3, 35580050),
 (14, 3, NULL),
-(15, 5, 1111),
-(15, 7, 2222),
-(16, 1, 1111),
-(16, 1, 1111),
-(16, 9, 2222),
-(16, 1, 2222);
+(15, 5, 44852025),
+(15, 7, 35580050),
+(16, 1, 44852025),
+(16, 1, 44852025),
+(16, 9, 35580050),
+(16, 1, 35580050);
 
 -- --------------------------------------------------------
 
@@ -99,7 +99,7 @@ CREATE TABLE `usuario` (
   `dni` int(50) NOT NULL,
   `nombre` varchar(20) NOT NULL,
   `apellido` varchar(20) NOT NULL,
-  `telefono` int(20) NOT NULL,
+  `telefono` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL,
   `direccion` varchar(100) NOT NULL,
   `fecha_nacimiento` varchar(20) NOT NULL,
@@ -113,9 +113,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`dni`, `nombre`, `apellido`, `telefono`, `email`, `direccion`, `fecha_nacimiento`, `clase_vehiculo`, `pass`, `rol`) VALUES
-(1111, 'pepito', 'perez', 156324542, 'pepito@gmail.com', 'pasaje falso 123', '10-02-1985', 'a', NULL, 'cartonero'),
-(2222, 'juancito', 'ramirez', 2233445, 'juancitoramirez@gmail.com', 'calle falsa 222', '03/08/1993', 'a', NULL, 'cartonero'),
-(43455973, 'miguelitonnnn', '', 0, '', '', '', '', '$2y$10$.J6RA6NXk0GJ04L.Qv7A2uuyxZiNOZMHePhCDVkYQyhDVMfNa52S.', 'admin');
+(35580050, 'juancito', 'ramirez', '2233445', 'juancitoramirez@gmail.com', 'calle falsa 222', '03/08/1993', 'a', NULL, 'cartonero'),
+(43455973, 'miguelitonnnn', '', '0', '', '', '', '', '$2y$10$.J6RA6NXk0GJ04L.Qv7A2uuyxZiNOZMHePhCDVkYQyhDVMfNa52S.', 'admin'),
+(44852025, 'pepito', 'perez', '156324542', 'pepito@gmail.com', 'pasaje falso 123', '10-02-1985', 'a', NULL, 'cartonero');
 
 --
 -- Índices para tablas volcadas
