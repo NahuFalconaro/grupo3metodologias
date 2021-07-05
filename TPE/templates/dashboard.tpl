@@ -18,9 +18,12 @@
                 <a href="showUsuarios">
                     <button class="btn btn-primary"> ABM Cartoneros</button>
                 </a>
-                <a href="recorridos">
-                    <button class="btn btn-primary"> Ver recorridos</button>
+                <a href="direcciones">
+                    <button class="btn btn-primary"> Ver direcciones</button>
                 </a>
+                <a href="recorridos">
+                <button class="btn btn-primary"> Ver recorridos</button>
+            </a>
             </div>
         </div>
     </div>

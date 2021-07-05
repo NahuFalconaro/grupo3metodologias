@@ -25,11 +25,11 @@ class View
     }
 
     //Muestra todos los recorridos
-    function verRecorridos($pedidos)
+    function verDirecciones($pedidos)
     {
         $smarty = new Smarty();
         $smarty->assign('Pedidos', $pedidos);
-        $smarty->display('templates/recorridos.tpl');
+        $smarty->display('templates/direcciones.tpl');
     }
 
     //muesta el formulario de la balanza y todos los materiales recolectados con su peso
@@ -37,6 +37,13 @@ class View
         $smarty = new Smarty();
         $smarty->assign('Materiales', $Materiales);
         $smarty->display('templates/balanza.tpl');
+    }
+
+
+    function verRecorridos($lista){
+        $smarty = new Smarty();
+        $smarty->assign('lista', $lista);
+        $smarty->display('templates/recorridos.tpl');
     }
 
     //muestra el formulario de contacto

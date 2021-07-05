@@ -6,11 +6,13 @@ class PedidoController
 {
 
     private $pedidoModel;
-    protected $view;
+    private $view;
+    private $usuarioModel;
     function __construct()
     {
         $this->view = new View();
         $this->pedidoModel = new PedidoModel();
+        $this->usuarioModel = new UserModel();
     }
 
     //se fija si esta logeado y llama a la view del formulario de contactanos
@@ -50,8 +52,30 @@ class PedidoController
     }
 
     //traigo de la db los pedidos y muestro solo las direcciones en el front
-    function verRecorridos(){
-       $pedidos = $this->pedidoModel->getAllPedidos();
-       $this->view->verRecorridos($pedidos);
+    function verDirecciones()
+    {
+        $pedidos = $this->pedidoModel->getAllPedidos();
+        $this->view->verDirecciones($pedidos);
+    }
+
+
+    function prueba()
+    {
+        $cartoneros = $this->usuarioModel->getAllCartoneros();
+
+        $i = 0;
+        $retorno = [];
+        foreach ($cartoneros as $cartonero) {
+            $pedidos = $this->pedidoModel->getPedidosByDni($cartonero->dni);
+
+            $armado = [];
+            $armado[0] = $cartonero->dni;
+            $armado[1] = $cartonero->nombre;
+            $armado[2] = $pedidos;
+            $retorno[$i] = $armado;
+            $i++;
+        }
+
+        $this->view->verRecorridos($retorno);
     }
 }

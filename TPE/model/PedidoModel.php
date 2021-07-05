@@ -33,4 +33,10 @@ class PedidoModel
         $query->execute();
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+
+    function getPedidosByDni($dni){
+        $query = $this->db->prepare("SELECT * FROM pedido WHERE usuario_asignado=?");
+        $query->execute(array($dni));
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
 }

@@ -37,15 +37,17 @@ $r->addRoute("verifyUser", "POST", "UserController", "verifyUser");
 $r->addRoute("dashboard", "GET", "UserController", "showDashboard");
 
 $r->addRoute("logout", "GET", "UserController", "Logout");
-$r->addRoute("recorridos", "GET", "PedidoController", "verRecorridos");
+$r->addRoute("direcciones", "GET", "PedidoController", "verDirecciones");
 
-//Actual
+
 $r->addRoute("showUsuarios", "GET", "UserController", "abmUsuarios");
 $r->addRoute("modifyUser/:ID", "POST", "UserController", "modifyUser");
 $r->addRoute("addUser", "POST", "UserController", "addUser");
 
-//rota??
 $r->addRoute("deleteUser/:ID", "GET", "UserController", "deleteUser");
+
+//Actual
+$r->addRoute("recorridos", "GET", "PedidoController", "prueba");
 
 
 
@@ -72,25 +74,10 @@ $r->addRoute("updateMaterial/:ID", "POST", "MaterialController", "updateMaterial
 // //parte del registro y login
 // $r->addRoute("register", "POST", "LoginController", "Register");
 
-
-
-// //all about that ABM
-// $r->addRoute("abm", "GET", "GalleryController", "ABM");
-
-// $r->addRoute("artworkabm", "GET", "GalleryController", "ArtworkABM");
-// $r->addRoute("addartwork", "POST", "GalleryController", "AddArtworkToDB");
-
-
-// $r->addRoute("addediteduser/:ID", "POST", "GalleryController", "AddEditedUser");
-// $r->addRoute("addeditedartwork/:ID", "POST", "GalleryController", "AddEditedArtwork");
-// $r->addRoute("addeditedcategory/:ID", "POST", "GalleryController", "AddEditedCategory");
-
-
 //Ruta por defecto.
 $r->setDefaultRoute("MaterialController", "home");
 
 //run
 $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']);
-
 
 ?>

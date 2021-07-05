@@ -42,4 +42,10 @@ class UserModel
         $query = $this->db->prepare("DELETE FROM usuario WHERE dni = ?");
         $query->execute(array($dni));
     }
+
+    function getAllCartoneros(){
+        $query = $this->db->prepare("SELECT * FROM usuario WHERE rol=?");
+        $query->execute(array($i = "cartonero"));
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
 }
