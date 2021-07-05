@@ -53,12 +53,14 @@ class UserController
         }
     }
 
+    //Muestra el panel de control
     function showDashboard()
     {
         $this->checkCredentials();
         $this->view->showDashboard();
     }
 
+    //Muestra el panel de Altas, Bajas y Modificaciones de los usuarios
     function abmUsuarios()
     {
         $this->checkCredentials();
@@ -66,6 +68,7 @@ class UserController
         $this->view->showAbmUsuarios($users);
     }
 
+    //Modifica la info de un usuario
     function modifyUser($params = null)
     {
         $key = $params[":ID"];
@@ -83,6 +86,7 @@ class UserController
         $this->view->ShowUsersLocation();
     }
 
+    //Añade un usuario
     function addUser()
     {
         $dni = $_POST["dni"];
@@ -99,6 +103,7 @@ class UserController
         $this->abmUsuarios();
     }
 
+    //Borra un usuario en base al dni
     function deleteUser($params = null)
     {
         $key = $params[":ID"];
@@ -106,6 +111,7 @@ class UserController
         $this->view->ShowUsersLocation();
     }
 
+    //Comprueba si se está logeado
     function checkCredentials()
     {
         session_start();

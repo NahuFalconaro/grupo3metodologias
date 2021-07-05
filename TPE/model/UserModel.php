@@ -17,6 +17,7 @@ class UserModel
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
 
+    //actualiza la info de un usuario
     function updateUser($key, $dni, $nombre, $apellido,  $telefono, $email, $direccion, $fecha_nacimiento, $clase_vehiculo, $rol)
     {
         $query = $this->db->prepare("UPDATE usuario SET dni=?, nombre=?, apellido=?, telefono=?, email=?, direccion=?, fecha_nacimiento=?, clase_vehiculo=?, rol=? WHERE dni = ?");
@@ -24,6 +25,7 @@ class UserModel
         return 1;
     }
 
+    //Trae TODOS los usuarios
     function getAllUsers()
     {
         $query = $this->db->prepare("SELECT * FROM usuario");
@@ -31,18 +33,21 @@ class UserModel
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
+    //Añadir un usuario
     function addUser($dni, $nombre, $apellido, $telefono, $email, $direccion, $fecha_nacimiento, $clase_vehiculo, $rol)
     {
         $sentencia = $this->db->prepare("INSERT INTO usuario(dni, nombre, apellido, telefono, email, direccion, fecha_nacimiento, clase_vehiculo, pass, rol) VALUES(?,?,?,?,?,?,?,?,?,?)");
         $sentencia->execute(array($dni, $nombre,$apellido, $telefono, $email, $direccion, $fecha_nacimiento, $clase_vehiculo, null, $rol));
     }
 
+    //Borra un usuario en base a su dni
     function deleteUser($dni)
     {
         $query = $this->db->prepare("DELETE FROM usuario WHERE dni = ?");
         $query->execute(array($dni));
     }
 
+    //Trae todos los cartoneros
     function getAllCartoneros(){
         $query = $this->db->prepare("SELECT * FROM usuario WHERE rol=?");
         $query->execute(array($i = "cartonero"));

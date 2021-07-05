@@ -47,8 +47,23 @@ class PedidoController
         $claseVehiculo = $_POST["clase_vehiculo"];
         $franjaHoraria = $_POST["franja_horaria"];
 
-        $this->pedidoModel->addPedido($nombre, $apellido, $ubicacion, $telefono, $imagen, $claseVehiculo, $franjaHoraria);
+        $cartonero_dni = $this->assignCartonero();
+
+        $this->pedidoModel->addPedido($cartonero_dni, $nombre, $apellido, $ubicacion, $telefono, $imagen, $claseVehiculo, $franjaHoraria);
         header("Location: " . BASE_FORM_PEDIDO);
+    }
+
+
+    //Asigna un cartonero aleatoriamente
+    function assignCartonero()
+    {
+        $cartoneros = $this->usuarioModel->getAllCartoneros();
+
+        if (count($cartoneros) != 0) {
+            $random = rand(0, count($cartoneros) - 1);
+            $cartonero_elegido = $cartoneros[$random];
+            return $cartonero_elegido->dni;
+        } else return null;
     }
 
     //traigo de la db los pedidos y muestro solo las direcciones en el front
@@ -59,7 +74,8 @@ class PedidoController
     }
 
 
-    function prueba()
+    //trae todos los cartoneros y sus pedidos asignados, y arma un array para presentarselo a la view
+    function verRecorridos()
     {
         $cartoneros = $this->usuarioModel->getAllCartoneros();
 

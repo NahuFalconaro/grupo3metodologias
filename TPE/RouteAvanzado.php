@@ -47,7 +47,7 @@ $r->addRoute("addUser", "POST", "UserController", "addUser");
 $r->addRoute("deleteUser/:ID", "GET", "UserController", "deleteUser");
 
 //Actual
-$r->addRoute("recorridos", "GET", "PedidoController", "prueba");
+$r->addRoute("recorridos", "GET", "PedidoController", "verRecorridos");
 
 
 

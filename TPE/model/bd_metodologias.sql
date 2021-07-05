@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-07-2021 a las 18:54:10
+-- Tiempo de generación: 05-07-2021 a las 19:37:37
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.6
 
@@ -90,6 +90,13 @@ CREATE TABLE `pedido` (
   `franja_horaria` char(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `pedido`
+--
+
+INSERT INTO `pedido` (`id_pedido`, `usuario_asignado`, `nombre`, `apellido`, `ubicacion`, `telefono`, `foto`, `clase_vehiculo`, `franja_horaria`) VALUES
+(5, '35580050', 'juan', 'pedro', 'juan calzada 123', 1234, NULL, 'c', '08:00hs a 13:00hs');
+
 -- --------------------------------------------------------
 
 --
@@ -161,7 +168,7 @@ ALTER TABLE `materiales`
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
