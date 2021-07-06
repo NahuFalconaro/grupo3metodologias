@@ -1,13 +1,18 @@
-Criteiro De Done:
+Criterio De Done:
 
 + Todos los criterios de aceptacion se cumplen.
+
 + Que todas las funcionalidades hayan sido testeadas y/o revisadas por un compañero.
+	-Este consistiria de:
+						Una vez terminada la implementacion de la TASKS, un compañero se encargara de 
+						revisar la funcionalidad implementada. Esto se documentara en Jira; Adjuntando foto, comentario, fecha, nombre y apellido de quien lo testeo
+						En caso de encontrar bugs, se le sacara captura de pantalla a estos, se publicaran en Jira y se le avisara al encargado de la task.
+						Luego de corregir estos problemas, se notificara al mismo tester que vuelva a evaluar la implementacion.
+						Si la evaluacion es positiva, se documentara en Jira que la funcionalidad paso el testeo y se dejara notificado con captura de pantalla, problemas arreglados, fecha del testing y nombre y apellido del tester.
+						Si el testeo sigue siendo negativo, se repetiran los pasos anteriormente mencionados.
+						
+						
 + Comentar arriba de cada funcion su funcionalidad.
+
 + Que se haya documentado el progreso del proyecto en Jira.
-
-
-
-
-
-
-
+	Se documentara linkeando el commit de github correspondiente a cada User Story.
