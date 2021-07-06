@@ -10,9 +10,11 @@ Criterio De Done:
 						Luego de corregir estos problemas, se notificara al mismo tester que vuelva a evaluar la implementacion.
 						Si la evaluacion es positiva, se documentara en Jira que la funcionalidad paso el testeo y se dejara notificado con captura de pantalla, problemas arreglados, fecha del testing y nombre y apellido del tester.
 						Si el testeo sigue siendo negativo, se repetiran los pasos anteriormente mencionados.
+						Cuando todas las tasks correspondientes a una user story esten implementadas,testeadas y resueltas se considerará a esa US como finalizada.
+
 						
 						
 + Comentar arriba de cada funcion su funcionalidad.
 
 + Que se haya documentado el progreso del proyecto en Jira.
-	Se documentara linkeando el commit de github correspondiente a cada User Story.
+	Se documentara linkeando el commit de github correspondiente a cada Task.
