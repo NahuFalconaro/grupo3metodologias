@@ -22,7 +22,6 @@ class UserModel
     {
         $query = $this->db->prepare("UPDATE usuario SET dni=?, nombre=?, apellido=?, telefono=?, email=?, direccion=?, fecha_nacimiento=?, clase_vehiculo=?, rol=? WHERE dni = ?");
         $query->execute(array($dni, $nombre, $apellido,  $telefono, $email, $direccion, $fecha_nacimiento, $clase_vehiculo, $rol, $key));
-        return 1;
     }
 
     //Trae TODOS los usuarios
