@@ -1,13 +1,29 @@
-{include file="header.tpl"}
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="banner">
-    <div class="banner__text">
-        <h3>Servicio Metodologia Grupo 3</h3>
-        <p id='pagina' class="pagina">Direcciones</p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/formulario.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <a href="dashboard">
+            <button class="btn btn-primary">
+                &#8592; Volver
+            </button>
+        </a>
     </div>
-</div>
+
+
 <div class="contains-fluid materiales">
-    <div class="tabla-materiales form">
+    <div class="tabla-materiales ">
         <div class="row">
             <div class="title-tpl">
                 <h3>Vista de direcciones indexadas en sistema.</h3>
@@ -41,4 +57,5 @@
         </div>
     </div>
 </div>
-{include file="footer.tpl"}
+
+<body>

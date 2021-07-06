@@ -1,17 +1,30 @@
-{include file="header.tpl"}
-<!-- Hascer otro template de material, donde uno se pueda editar y este oculto 
-y el otro sea visible para todos y saber q material es aceptado-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/formulario.css">
+    <title>Document</title>
+</head>
+<body>
+<div>
+        <a href="dashboard">
+            <button class="btn btn-primary">
+                &#8592; Volver
+            </button>
+        </a>
+    </div>
+
 <div class="edit_popup hidden">
     {include file="updateMaterial.tpl"}
 </div>
-<div class="banner">
-        <div class="banner__text">
-            <h3>Servicio Metodologia Grupo 3</h3>
-            <p id='pagina' class="pagina">Cartelera informativa</p>
-        </div>
-    </div>
+
 <div class="contains-fluid materiales">
-    <div class="tabla-materiales form">
+    <div class="tabla-materiales ">
         <div class="row">
             <div class="title-tpl">
                 <h3>Cartelera informativa de materiales aceptados</h3>
@@ -71,5 +84,5 @@ y el otro sea visible para todos y saber q material es aceptado-->
         </div>
     </div>
 </div>
-{include file="footer.tpl"}
 <script src="js/popup.js"></script>
+<body>

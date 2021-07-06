@@ -25,7 +25,7 @@
                 </button>
             </a>
         </div>
-        <div class="form_center">
+        <div >
             <div>
                 <div class="title-tpl">
                     <h3>Panel de Cartoneros</h3>
