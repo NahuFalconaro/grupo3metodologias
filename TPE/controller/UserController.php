@@ -55,9 +55,12 @@ class UserController
 
     //Muestra el panel de control
     function showDashboard()
-    {
-        $this->checkCredentials();
-        $this->view->showDashboard();
+    {   
+        $logeado = $this->checkCredentials();
+        if ($logeado==true)
+            $this->view->ShowDashboard();
+        else
+            $this->view->showLogin();
     }
 
     //Muestra el panel de Altas, Bajas y Modificaciones de los usuarios
@@ -112,11 +115,11 @@ class UserController
     }
 
     //Comprueba si se está logeado
-    function checkCredentials()
-    {
+    function checkCredentials(){
         session_start();
+        
         if (isset($_SESSION['ID_USER'])) {
             return true;
-        } else $this->view->ShowHome(0);
+        } else return false;
     }
 }

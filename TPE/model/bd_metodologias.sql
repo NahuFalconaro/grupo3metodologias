@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-07-2021 a las 19:37:37
+-- Tiempo de generación: 13-07-2021 a las 02:35:20
 -- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.6
+-- Versión de PHP: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,9 +39,9 @@ CREATE TABLE `materiales` (
 --
 
 INSERT INTO `materiales` (`id_materiales`, `nombre`, `aceptado`, `descripcion`) VALUES
-(14, 'Vidrio', 1, 'No traerlo roto y entregarlo bien envuelto'),
-(15, 'Bronce', 1, 'Descripcion'),
-(16, 'Plata', 1, 'Descripcion de plata');
+(15, 'Bronce', 1, 'Asdasdasd'),
+(17, 'Acero', 1, 'Material caro'),
+(18, 'Vidrio', 1, 'El vidrio corta ');
 
 -- --------------------------------------------------------
 
@@ -60,17 +60,10 @@ CREATE TABLE `material_traido` (
 --
 
 INSERT INTO `material_traido` (`id_materiales`, `peso`, `dni`) VALUES
-(14, 3, 44852025),
-(14, 3, 44852025),
-(14, 3, NULL),
-(14, 3, 35580050),
-(14, 3, NULL),
-(15, 5, 44852025),
+(15, 5, NULL),
 (15, 7, 35580050),
-(16, 1, 44852025),
-(16, 1, 44852025),
-(16, 9, 35580050),
-(16, 1, 35580050);
+(17, 3, NULL),
+(17, 5, 1122);
 
 -- --------------------------------------------------------
 
@@ -95,7 +88,16 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`id_pedido`, `usuario_asignado`, `nombre`, `apellido`, `ubicacion`, `telefono`, `foto`, `clase_vehiculo`, `franja_horaria`) VALUES
-(5, '35580050', 'juan', 'pedro', 'juan calzada 123', 1234, NULL, 'c', '08:00hs a 13:00hs');
+(5, '35580050', 'juan', 'pedro', 'juan calzada 123', 1234, NULL, 'c', '08:00hs a 13:00hs'),
+(6, '342342', 'pablito', 'ramirez', 'calle falsa 222', 34234, NULL, 'a', '08:00hs a 13:00hs'),
+(7, '342342', 'juan', 'magan', 'calle falsa 222', 34234, NULL, 'c', '15:00hs a 18:00hs'),
+(8, '35580050', 'juan roman', 'riquelme', 'gutierrez 6666', 45343222, NULL, 'b', '15:00hs a 18:00hs'),
+(9, '35580050', 'milagros', 'aasd', 'sastre 1332', 34234, NULL, 'd', '15:00hs a 18:00hs'),
+(10, '342342', 'pablito', 'magan', 'recoleta 2222', 34234, NULL, 'a', '08:00hs a 13:00hs'),
+(11, '44852025', 'juan', 'juancito', 'avenida ramirez 923', 23423566, NULL, 'b', '08:00hs a 13:00hs'),
+(12, '35580050', 'Lionel', 'Messi', 'Barcelona 1010', 249410222, NULL, 'd', '15:00hs a 18:00hs'),
+(13, '35580050', 'Lebron ', 'James', 'Wall Street 2324', 2147483647, NULL, 'd', '15:00hs a 18:00hs'),
+(14, '1122', 'nuevo pedido', 'ramirez', 'calle falsa 2223', 45343222, NULL, 'b', '15:00hs a 18:00hs');
 
 -- --------------------------------------------------------
 
@@ -121,9 +123,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`dni`, `nombre`, `apellido`, `telefono`, `email`, `direccion`, `fecha_nacimiento`, `clase_vehiculo`, `pass`, `rol`) VALUES
-(35580050, 'juancito', 'ramirez', '2233445', 'juancitoramirez@gmail.com', 'calle falsa 222', '03/08/1993', 'a', NULL, 'cartonero'),
-(43455973, 'miguelitonnnn', '', '0', '', '', '', '', '$2y$10$.J6RA6NXk0GJ04L.Qv7A2uuyxZiNOZMHePhCDVkYQyhDVMfNa52S.', 'admin'),
-(44852025, 'pepito', 'perez', '156324542', 'pepito@gmail.com', 'pasaje falso 123', '10-02-1985', 'a', NULL, 'cartonero');
+(1122, 'Carmelo', 'Antony', '234455656', 'carmelomelo@gmail.com', 'New york 444', '03-08-1994', 'b', NULL, 'cartonero'),
+(35580050, 'juancitoo', 'Gonzalez', '2233445', 'juancitoramirez@gmail.com', 'calle falsa 1111', '03-08-1993', 'a', NULL, 'cartonero'),
+(43455973, 'miguelitonnnn', '', '0', '', '', '', '', '$2y$10$.J6RA6NXk0GJ04L.Qv7A2uuyxZiNOZMHePhCDVkYQyhDVMfNa52S.', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -162,13 +164,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `materiales`
 --
 ALTER TABLE `materiales`
-  MODIFY `id_materiales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_materiales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas
@@ -178,7 +180,7 @@ ALTER TABLE `pedido`
 -- Filtros para la tabla `material_traido`
 --
 ALTER TABLE `material_traido`
-  ADD CONSTRAINT `fk_materiales_traidos` FOREIGN KEY (`id_materiales`) REFERENCES `materiales` (`id_materiales`),
+  ADD CONSTRAINT `fk_materiales_traidos` FOREIGN KEY (`id_materiales`) REFERENCES `materiales` (`id_materiales`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `material_traido_ibfk_1` FOREIGN KEY (`dni`) REFERENCES `usuario` (`dni`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
 
